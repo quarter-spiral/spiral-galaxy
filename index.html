@@ -32,88 +32,233 @@
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container">
-                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </a>
-                    <a class="brand" href="#">Project name</a>
                     <div class="nav-collapse collapse">
                         <ul class="nav">
                             <li class="active"><a href="#">Home</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#contact">Contact</a></li>
+                            <li>
+                                <form class="form-search navbar-form">
+                                    <input type="text" class="input-medium search-query span2" placeholder="Search Games..." />
+                                </form>
+                            </li>
+                        </ul>
+                        
+                    </div><!--/.nav-collapse -->
+
+                    
+
+                    <div class="nav-collapse collapse pull-right">
+                        <ul class="nav">        
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user icon-white"></i> Ethan Levy <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#">Action</a></li>
-                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Profile</a></li>
+                                    <li><a href="#">Your library</a></li>
                                     <li><a href="#">Something else here</a></li>
                                     <li class="divider"></li>
                                     <li class="nav-header">Nav header</li>
-                                    <li><a href="#">Separated link</a></li>
-                                    <li><a href="#">One more separated link</a></li>
+                                    <li><a href="#">Your Account</a></li>
+                                    <li><a href="#">Privacy</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">Log out</a></li>
                                 </ul>
                             </li>
+
                         </ul>
-                        <form class="navbar-form pull-right">
-                            <input class="span2" type="text" placeholder="Email">
-                            <input class="span2" type="password" placeholder="Password">
-                            <button type="submit" class="btn">Sign in</button>
-                        </form>
+                        
                     </div><!--/.nav-collapse -->
+
                 </div>
             </div>
         </div>
 
         <div class="container">
 
-            <!-- Main hero unit for a primary marketing message or call to action -->
-            <div class="hero-unit">
-                <h1>Hello, world!</h1>
+          <!-- Promotional top bar -->
+
+          <div id="promoBlock">
+          <div class="row" >
+
+            <div class="span4">
+              <h2>Top Games</h2>
+              <div id="myCarousel" class="carousel slide">
+                <!-- Carousel items -->
+                <div class="carousel-inner">
+                  <div class="active item">
+                    <div class="feature large">
+                      <div class="banner">
+                        <div class="title">Game 1</div>
+                        <div class="info">Yesterday</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="feature large">
+                      <div class="banner">
+                        <div class="title">Game 2</div>
+                        <div class="info">Yesterday</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Carousel nav -->
+                <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+                <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+              </div>
+            </div>
+
+            <div class="span4">
+              <h2>Your Friends Play</h2>
+              <div class="feature large">
+                <div class="banner">
+                  <div class="title">Title</div>
+                  <div class="info">Yesterday</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="span4">
+
+              <h2>Recently played</h2>
+
+              <div class="row" >
+
+                <div class="span2">
+                  
+                  <div class="feature">
+                    <div class="banner">
+                      <div class="title">Title</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="span2">
+                  <div class="feature">
+                    <div class="banner">
+                      <div class="title">Title</div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="span4">
+              <div class="feature">
                 <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-                <p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+              </div>
             </div>
 
-            <!-- Example row of columns -->
-            <div class="row">
-                <div class="span4">
-                    <h2>Heading</h2>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                    <p><a class="btn" href="#">View details &raquo;</a></p>
-                </div>
-                <div class="span4">
-                    <h2>Heading</h2>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                    <p><a class="btn" href="#">View details &raquo;</a></p>
-               </div>
-                <div class="span4">
-                    <h2>Heading</h2>
-                    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                    <p><a class="btn" href="#">View details &raquo;</a></p>
-                </div>
+              
+          </div>
+          </div>
+
+          <!-- main game explorer (3 columns) -->
+          <div class="row">
+
+            <div class="span2">
+
+              <p class="btn-group" data-toggle="buttons-radio">
+
+                <button type="button" class="active btn">All</button>
+                <button type="button" class="btn">Web</button>
+                <button type="button" class="btn">Mobile</button>
+              </p>
+
+              <ul class="nav nav-list categories">
+                <li class="nav-header">Categories</li>
+                <li class="active"><a href="#"><strong>All</strong> 2310</a></li>
+                <li><a href="#"><strong>MMO</strong> 231</a></li>
+                <li><a href="#"><strong>Adventure</strong> 321</a></li>
+                <li><a href="#"><strong>Action</strong> 124</a></li>
+                <li><a href="#"><strong>Arcade</strong> 98</a></li>
+                <li><a href="#"><strong>Shooting</strong> 56</a></li>
+                <li><a href="#"><strong>Puzzle</strong> 87</a></li>
+                <li><a href="#"><strong>Strategy</strong> 241</a></li>
+                <li><a href="#"><strong>Sport</strong> 12</a></li>
+                <li><a href="#"><strong>Other</strong> 74</a></li>
+              </ul>
             </div>
 
-            <hr>
 
-            <footer>
-                <p>&copy; Company 2012</p>
-            </footer>
+            <div class="span7">
+              <div class="box">
+                <h2></h2>
+                <div class="tabbable"> <!-- Only required for left/right tabs -->
+                  <ul class="nav nav-tabs">
+                    <li class="active"><a href="#tab1" data-toggle="tab">Popular</a></li>
+                    <li><a href="#tab2" data-toggle="tab2">Player by Friends</a></li>
+                    <li><a href="#tab3" data-toggle="tab3">Top Grossing</a></li>
+                    <li><a href="#tab3" data-toggle="tab3">Top Rated</a></li>
+                    <li><a href="#tab4" data-toggle="tab4">New</a></li>
+                  </ul>
+                  <div class="tab-content">
+                    <div class="tab-pane active" id="tab1">
+                      <p>I'm in Section 1.</p>
+                    </div>
+                    <div class="tab-pane" id="tab2">
+                      <p>Howdy, I'm in Section 2.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="span3" id="recentlyPlayed">
+              <div class="box">
+                <h2>You recently played:</h2>
+                <ol>
+                  <li>
+                    <a href="#">
+                      <img src="#" widh="50px" height="50px" />
+                      <span class="title">Title</span>
+                      <span class="info">2 hours ago</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="#" widh="50px" height="50px" />
+                      <span class="title">Title</span>
+                      <span class="info">Yesterday</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="#" widh="50px" height="50px" />
+                      <span class="title">Title</span>
+                      <span class="info">3 days ago</span>
+                    </a>
+                  </li>
+                </ol>
+                <p><a class="btn" href="#">Your Library &raquo;</a></p>
+              </div>
+              <div class="box">
+                <h2>Spotlight</h2>
+                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                <p><a class="btn" href="#">View details &raquo;</a></p>
+              </div>
+           </div>
+            
+        </div>
 
-        </div> <!-- /container -->
+        <hr>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.2.min.js"><\/script>')</script>
+        <footer>
+            <p>&copy; Company 2012</p>
+        </footer>
 
-        <script src="js/vendor/bootstrap.min.js"></script>
+    </div> <!-- /container -->
 
-        <script src="js/main.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.2.min.js"><\/script>')</script>
 
-        <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>
-    </body>
+    <script src="js/vendor/bootstrap.min.js"></script>
+
+    <script src="js/main.js"></script>
+
+    <script>
+        var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
+  </body>
 </html>

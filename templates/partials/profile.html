@@ -1,1 +1,48 @@
-Yay. Profile!
+<div class="row" id="profileHeader">
+  <div class="span9" >
+    <h1>Ethan Levy</h1>
+    <div class="profileText">
+      <p>A 10 year veteran designer and producer, Ethan has made games big and small at BioWare, Pandemic Studios, PlayFirst and iWin.</p>
+    </div>
+    <p>Find Ethan on: <a href="#">Google+</a>, <a href="#">Facebook</a>, <a href="#">Twitter</a></p>
+  </div>
+  <div class="span3">
+    <img src="http://gamasutra.com/blogs/edit/img/portrait/404017/portrait.jpg?1331322898" />
+    
+  </div>
+</div>  
+<div class="row">
+  <div class="span6" id="activity" ng-controller="GamesController">
+    <div class="box">
+      <h2>Recently Activity</h2>
+      <ol>
+        <li ng-repeat="game in gamesList('recently')">
+          <a href="#">
+            <img src="#" height="40px" width="50px" />
+            <span class="title">Played {{game.name}}</span>
+            <span class="info">2 hours ago</span>
+          </a>
+        </li>
+      </ol>
+    </div>
+  </div>
+  <div class="span3" id="recentlyPlayed" ng-controller="GamesController">
+    <div class="box">
+      <h2>Ethan's favorite games</h2>
+      <ol>
+        <li ng-repeat="game in gamesList('recently')">
+          <a href="#">
+            <img src="{{game.promoImage}}" height="40px" width="50px" />
+            <span class="title">Played {{game.name}}</span>
+            <span class="info">2 hours ago</span>
+          </a>
+        </li>
+      </ol>
+    </div>
+  </div>
+  <div class="span3" id="recentlyPlayed" ng-controller="GamesController">
+    <div class="box">
+      <h2>Ethan's Friends</h2>
+    </div>
+  </div>
+</div>

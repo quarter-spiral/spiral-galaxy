@@ -44,6 +44,7 @@ body {
 		overflow:hidden;
 		margin-bottom: @featureMargin;
 		position:relative;
+		.background-size(cover);
 		&.large {
 			height:2*@singleFeatureHeight+@featureMargin;
 		}
@@ -53,7 +54,7 @@ body {
 			left:0px;
 			right:0px;
 			padding:5px 10px;
-			background-color:rgba(0,0,0,0.8);
+			background-color:rgba(0,0,0,0.7);
 			text-align: center;
 			div {
 				overflow:hidden;
@@ -117,8 +118,10 @@ body {
 	margin:0px;
 	padding:0px;
 	li {
-		min-height: @mediaHeight + 0px;
-		margin:0px 0px 30px 0px;
+		min-height: @mediaHeight + 20px;
+		margin:0px 0px 20px 0px;
+		padding-top:0px;
+		border-bottom:1px dashed #CCC;
 	}
 	h3 {
 		margin:0px 0px 0.5em 0px;
@@ -134,7 +137,7 @@ body {
 		float:left;
 		width:@mediaWidth;
 		height:@mediaHeight;
-		background-color:#FF0;
+		.background-size(cover);
 	}
 	.info {
 		margin-left:@mediaWidth + 10px;
@@ -165,4 +168,12 @@ body {
   -webkit-box-shadow: @shadow;
      -moz-box-shadow: @shadow;
           box-shadow: @shadow;
+}
+
+// Background sizing
+.background-size(@size) {
+  -webkit-background-size: @size;
+     -moz-background-size: @size;
+       -o-background-size: @size;
+          background-size: @size;
 }

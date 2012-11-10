@@ -81,7 +81,7 @@
                 <!-- Carousel items -->
                 <div class="carousel-inner">
                   <div class="item" ng-class="{active: game.active}" ng-repeat="game in gamesList('popular') | limitTo:3">
-                    <div class="feature large">
+                    <div class="feature large" style="background-image: url('{{game.promoImage}}');">
                       <div class="banner">
                         <div class="title">{{game.name}}</div>
                         <div class="info">Yesterday</div>
@@ -101,7 +101,7 @@
                 <!-- Carousel items -->
                 <div class="carousel-inner">
                   <div class="item" ng-class="{active: game.active}" ng-repeat="game in gamesList('friends') | limitTo:3">
-                    <div class="feature large">
+                    <div class="feature large" style="background-image: url('{{game.promoImage}}');">
                       <div class="banner">
                         <div class="title">{{game.name}}</div>
                         <div class="info">Yesterday</div>
@@ -117,13 +117,13 @@
 
             <div class="span4">
 
-              <h2>Play again</h2>
+              <h2>Play it again</h2>
 
               <div class="row" ng-controller="GamesController">
 
                 <div class="span2" ng-repeat="game in gamesList('recently') | limitTo:4">
 
-                  <div class="feature">
+                  <div class="feature" style="background-image: url('{{game.promoImage}}');">
                     <div class="banner">
                       <div class="title">{{game.name}}</div>
                     </div>
@@ -164,8 +164,8 @@
             </div>
 
 
-            <div class="span7">
-              <div class="box" ng-controller="GamesController">
+            <div class="span7" ng-controller="GamesController">
+              <div class="box" >
                 <h2></h2>
                 <div class="tabbable"> <!-- Only required for left/right tabs -->
                   <ul class="nav nav-tabs" ng-init="type = 'popular'">
@@ -177,8 +177,7 @@
                     <div class="tab-pane active" id="tab1">
                       <ul class="gamesList" >
                         <li ng-repeat="game in gamesList(type)">
-                          <div class="media">
-                            <p>img or video goes here...</p>
+                          <div class="media" style="background-image: url('{{game.promoImage}}');">
                           </div>
                           <div class="info">
                             <h3><a href="#">{{game.name}}</a></h3>
@@ -196,29 +195,15 @@
                 </div>
               </div>
             </div>
-            <div class="span3" id="recentlyPlayed">
+            <div class="span3" id="recentlyPlayed" ng-controller="GamesController">
               <div class="box">
                 <h2>You recently played:</h2>
                 <ol>
-                  <li>
+                  <li ng-repeat="game in gamesList('recently')">
                     <a href="#">
                       <img src="#" widh="50px" height="50px" />
-                      <span class="title">Title</span>
+                      <span class="title">{{game.name}}</span>
                       <span class="info">2 hours ago</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <img src="#" widh="50px" height="50px" />
-                      <span class="title">Title</span>
-                      <span class="info">Yesterday</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <img src="#" widh="50px" height="50px" />
-                      <span class="title">Title</span>
-                      <span class="info">3 days ago</span>
                     </a>
                   </li>
                 </ol>
@@ -236,7 +221,7 @@
         <hr>
 
         <footer>
-            <p>&copy; Company 2012</p>
+            <p>&copy; <a href="http://quarterspiral.com">Quarter Spiral</a> 2012</p>
         </footer>
 
     </div> <!-- /container -->

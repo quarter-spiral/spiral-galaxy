@@ -4,6 +4,8 @@ Bundler.require
 ENV["RACK_ENV"] = "development"
 
 require 'brochure'
+require 'coffee_script'
+require 'less'
 
 root = File.dirname(__FILE__)
 brochure = Brochure.app(root)

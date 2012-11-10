@@ -31,7 +31,7 @@
                 <div class="container">
                     <div class="nav-collapse collapse">
                         <ul class="nav">
-                            <li class="active"><a href="#">Home</a></li>
+                            <li class="active"><a href="#/">Home</a></li>
                             <li>
                                 <form class="form-search navbar-form">
                                     <input type="text" class="input-medium search-query span2" placeholder="Search Games..." />
@@ -48,14 +48,11 @@
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user icon-white"></i> Ethan Levy <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#">Profile</a></li>
-                                    <li><a href="#">Your library</a></li>
-                                    <li><a href="#">Something else here</a></li>
+                                    <li><a href="#/profile">Public Profile</a></li>
+                                    <!-- <li><a href="#">Your library</a></li> -->
                                     <li class="divider"></li>
-                                    <li class="nav-header">Nav header</li>
+                                    <li class="nav-header">Manage</li>
                                     <li><a href="#">Your Account</a></li>
-                                    <li><a href="#">Privacy</a></li>
-                                    <li class="divider"></li>
                                     <li><a href="#">Log out</a></li>
                                 </ul>
                             </li>
@@ -70,155 +67,11 @@
 
         <div class="container">
 
-          <!-- Promotional top bar -->
-
-          <div id="promoBlock">
-          <div class="row" >
-
-            <div class="span4" ng-controller="GamesController">
-              <h2>Featured Top Games</h2>
-              <div id="myCarousel" class="carousel slide">
-                <!-- Carousel items -->
-                <div class="carousel-inner">
-                  <div class="item" ng-class="{active: $first}" ng-repeat="game in gamesList('popular') | limitTo:3">
-                    <div class="feature large" style="background-image: url('{{game.promoImage}}');">
-                      <div class="banner">
-                        <div class="title">{{game.name}}</div>
-                        <div class="info">Yesterday</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- Carousel nav -->
-                <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-                <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
-              </div>
-            </div>
-
-            <div class="span4" ng-controller="GamesController">
-              <h2>Featured Friends Play</h2>
-              <div id="myCarousel2" class="carousel slide">
-                <!-- Carousel items -->
-                <div class="carousel-inner">
-                  <div class="item" ng-class="{active: $first}" ng-repeat="game in gamesList('friends') | limitTo:3">
-                    <div class="feature large" style="background-image: url('{{game.promoImage}}');">
-                      <div class="banner">
-                        <div class="title">{{game.name}}</div>
-                        <div class="info">Yesterday</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- Carousel nav -->
-                <a class="carousel-control left" href="#myCarousel2" data-slide="prev">&lsaquo;</a>
-                <a class="carousel-control right" href="#myCarousel2" data-slide="next">&rsaquo;</a>
-              </div>
-            </div>
-
-            <div class="span4">
-
-              <h2>Play it again</h2>
-
-              <div class="row" ng-controller="GamesController">
-
-                <div class="span2" ng-repeat="game in gamesList('recently') | limitTo:4">
-
-                  <div class="feature" style="background-image: url('{{game.promoImage}}');">
-                    <div class="banner">
-                      <div class="title">{{game.name}}</div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-          </div>
-          </div>
-
-          <!-- main game explorer (3 columns) -->
-          <div class="row">
-
-            <div class="span2">
-
-              <p class="btn-group" data-toggle="buttons-radio">
-
-                <button type="button" class="active btn">All</button>
-                <button type="button" class="btn">Web</button>
-                <button type="button" class="btn">Mobile</button>
-              </p>
-
-              <ul class="nav nav-list categories">
-                <li class="nav-header">Categories</li>
-                <li class="active"><a href="#"><strong>All</strong> 2310</a></li>
-                <li><a href="#"><strong>MMO</strong> 231</a></li>
-                <li><a href="#"><strong>Adventure</strong> 321</a></li>
-                <li><a href="#"><strong>Action</strong> 124</a></li>
-                <li><a href="#"><strong>Arcade</strong> 98</a></li>
-                <li><a href="#"><strong>Shooting</strong> 56</a></li>
-                <li><a href="#"><strong>Puzzle</strong> 87</a></li>
-                <li><a href="#"><strong>Strategy</strong> 241</a></li>
-                <li><a href="#"><strong>Sport</strong> 12</a></li>
-                <li><a href="#"><strong>Other</strong> 74</a></li>
-              </ul>
-            </div>
-
-
-            <div class="span7" ng-controller="GamesController">
-              <div class="box" >
-                <h2></h2>
-                <div class="tabbable"> <!-- Only required for left/right tabs -->
-                  <ul class="nav nav-tabs" ng-init="type = 'popular'">
-                    <li ng-class="{active: type == 'popular'}"><a ng-click="type = 'popular'">Popular</a></li>
-                    <li ng-class="{active: type == 'friends'}"><a ng-click="type = 'friends'">Played by Friends</a></li>
-                    <li ng-class="{active: type == 'new'}"><a ng-click="type = 'new'">New</a></li>
-                  </ul>
-                  <div class="tab-content">
-                    <ul class="gamesList" >
-                      <li ng-repeat="game in gamesList(type)">
-                        <div class="media" style="background-image: url('{{game.promoImage}}');">
-                        </div>
-                        <div class="info">
-                          <h3><a href="#">{{game.name}}</a></h3>
-                          <div class="description">
-                            <p>{{game.description}}</p>
-                          </div>
-                          <div class="meta">
-                            <p><a href="#">Ethan</a> & <a href="#">Thorben</a> have played Title.</p>
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="span3" id="recentlyPlayed" ng-controller="GamesController">
-              <div class="box">
-                <h2>You recently played:</h2>
-                <ol>
-                  <li ng-repeat="game in gamesList('recently')">
-                    <a href="#">
-                      <img src="{{game.promoImage}}" height="50px" width="50px" />
-                      <span class="title">{{game.name}}</span>
-                      <span class="info">2 hours ago</span>
-                    </a>
-                  </li>
-                </ol>
-                <p><a class="btn" href="#">Your Library &raquo;</a></p>
-              </div>
-              <div class="box">
-                <h2>Spotlight</h2>
-                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                <p><a class="btn" href="#">View details &raquo;</a></p>
-              </div>
-           </div>
-
-        </div>
-
-        <hr>
+          <div ng-view></div>
 
         <footer>
+            <hr>
+
             <p>&copy; <a href="http://quarterspiral.com">Quarter Spiral</a> 2012</p>
         </footer>
 

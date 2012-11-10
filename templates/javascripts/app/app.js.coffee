@@ -4,4 +4,7 @@
   "spiralGalaxy.services"
   "spiralGalaxy.directives"
 ]).config ["$routeProvider", ($routeProvider) ->
+  $routeProvider.when "/", templateUrl: "/partials/frontpage.html"
+  $routeProvider.when "/profile", templateUrl: "/partials/profile.html"
+  $routeProvider.otherwise redirectTo: "/"
 ]

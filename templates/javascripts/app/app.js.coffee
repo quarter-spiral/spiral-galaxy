@@ -1,5 +1,7 @@
 # Declare app level module which depends on filters, and services
 @angular.module("spiralGalaxy", [
+  "ngCookies"
+  "qsCommons.services"
   "spiralGalaxy.filters"
   "spiralGalaxy.services"
   "spiralGalaxy.directives"

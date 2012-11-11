@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html class="no-js" ng-app="spiralGalaxy">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="/stylesheets/vendor/bootstrap.css">
+    <style>
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+    </style>
+    <link rel="stylesheet" href="/stylesheets/vendor/bootstrap-responsive.css">
+    <link rel="stylesheet" href="/stylesheets/main.css">
+
+    <script src="/javascripts/vendor/modernizr-2-6-1.js"></script>
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+    <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+    <![endif]-->
+
+    <!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active"><a href="#/">Home</a></li>
+              <!--
+              <li>
+              <form class="form-search navbar-form">
+                <input type="text" class="input-medium search-query span2" placeholder="Search Games..." />
+              </form>
+              </li>
+              -->
+            </ul>
+
+          </div><!--/.nav-collapse -->
+
+          <div class="nav-collapse collapse pull-right">
+            <ul class="nav">
+              <li class="dropdown" ng-show="loggedIn">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user icon-white"></i> {{currentUser.name}} <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#/profile">Public Profile</a></li>
+                  <li><a href="#/library">Game Library</a></li>
+                  <li class="divider"></li>
+                  <li class="nav-header">Quarter Spiral ID</li>
+                  <li><a href="<%= File.join(ENV['QS_AUTH_BACKEND_URL'], '/profile') %>">Your Account</a></li>
+                  <li ng-controller="UsersController"><a ng-click="logout()">Log Out</a></li>
+                </ul>
+              </li>
+              <li ng-hide="loggedIn"><a href="/auth/auth_backend">Log In</a></li>
+            </ul>
+
+          </div><!--/.nav-collapse -->
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div ng-view></div>
+
+      <footer>
+      <hr>
+
+      <p>&copy; <a href="http://quarterspiral.com">Quarter Spiral</a> 2012</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    <script src="/angular-commons/javascripts/envs.js"></script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/javascripts/vendor/jquery-1.8.2.js"><\/script>')</script>
+
+    <script src="/javascripts/vendor/bootstrap.js"></script>
+
+    <script src="/javascripts/vendor/angular/angular.js"></script>
+    <script src="/javascripts/vendor/angular/angular-cookies.js"></script>
+
+    <script src="/angular-commons/javascripts/services.js"></script>
+    <script src="/angular-commons/javascripts/controllers.js"></script>
+
+    <script src="/javascripts/app/app.js"></script>
+    <script src="/javascripts/app/services.js"></script>
+    <script src="/javascripts/app/controllers.js"></script>
+    <script src="/javascripts/app/filters.js"></script>
+    <script src="/javascripts/app/directives.js"></script>
+
+    <script src="/javascripts/main.js"></script>
+
+    <script>
+      var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
+  </body>
+</html>

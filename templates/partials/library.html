@@ -1,0 +1,51 @@
+<div class="row">
+  <div class="span10 offset2" >
+    <div class="page-header">
+      <h1><a href="#/profile">Ethan's</a> game library</h1>
+    </div>
+  </div>
+</div>  
+<div class="row">
+
+  <div class="span2">
+
+    <div id="filters">
+      <p class="btn-group" data-toggle="buttons-radio">
+
+        <button type="button" class="active btn">All</button>
+        <button type="button" class="btn">Web</button>
+        <button type="button" class="btn">Mobile</button>
+      </p>
+
+      <ul class="nav nav-list categories">
+        <li class="nav-header">Categories</li>
+        <li class="active"><a href="#"><strong>All</strong> 14</a></li>
+        <li><a href="#"><strong>MMO</strong> 2</a></li>
+        <li><a href="#"><strong>Adventure</strong> 10</a></li>
+        <li><a href="#"><strong>Action</strong> 2</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="span10" ng-controller="GamesController">
+    <div class="box" >
+      <ul class="gamesList" >
+        <li ng-repeat="game in gamesList(type)">
+          <div class="media" style="background-image: url('{{game.promoImage}}');">
+          </div>
+          <div class="info">
+            <h3><a href="#">{{game.name}}</a></h3>
+            <div class="description">
+              <p>{{game.description}}</p>
+            </div>
+            <div class="meta">
+              <p><a href="#/profile">Ethan</a> & <a href="#/profile">Thorben</a> have played Title.</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</div>

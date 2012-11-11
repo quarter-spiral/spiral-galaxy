@@ -6,5 +6,6 @@
 ]).config ["$routeProvider", ($routeProvider) ->
   $routeProvider.when "/", templateUrl: "/partials/frontpage.html"
   $routeProvider.when "/profile", templateUrl: "/partials/profile.html"
+  $routeProvider.when "/library", templateUrl: "/partials/library.html"
   $routeProvider.otherwise redirectTo: "/"
 ]

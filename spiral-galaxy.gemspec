@@ -24,4 +24,5 @@ Gem::Specification.new do |gem|
   gem.add_dependency 'omniauth-oauth2'
 
   gem.add_dependency 'angular-commons-middleware', '>= 0.0.2'
+  gem.add_dependency 'thin'
 end

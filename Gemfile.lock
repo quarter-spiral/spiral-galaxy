@@ -1,0 +1,66 @@
+PATH
+  remote: .
+  specs:
+    spiral-galaxy (0.0.1)
+      angular-commons-middleware (>= 0.0.2)
+      brochure
+      coffee-script
+      less
+      omniauth-oauth2
+      therubyracer
+
+GEM
+  remote: http://rubygems.org/
+  remote: https://user:We267RFF7BfwVt4LdqFA@privategems.herokuapp.com/
+  specs:
+    angular-commons-middleware (0.0.2)
+      brochure
+      coffee-script
+      json
+      therubyracer
+    brochure (0.5.4)
+      hike (~> 1.0)
+      rack (~> 1.0)
+      tilt (~> 1.1)
+    coffee-script (2.2.0)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.4.0)
+    commonjs (0.2.6)
+    execjs (1.4.0)
+      multi_json (~> 1.0)
+    faraday (0.8.4)
+      multipart-post (~> 1.1)
+    hashie (1.2.0)
+    hike (1.2.1)
+    httpauth (0.2.0)
+    json (1.7.5)
+    jwt (0.1.5)
+      multi_json (>= 1.0)
+    less (2.2.2)
+      commonjs (~> 0.2.6)
+    libv8 (3.3.10.4)
+    multi_json (1.3.7)
+    multipart-post (1.1.5)
+    oauth2 (0.8.0)
+      faraday (~> 0.8)
+      httpauth (~> 0.1)
+      jwt (~> 0.1.4)
+      multi_json (~> 1.0)
+      rack (~> 1.2)
+    omniauth (1.1.1)
+      hashie (~> 1.2)
+      rack
+    omniauth-oauth2 (1.1.1)
+      oauth2 (~> 0.8.0)
+      omniauth (~> 1.0)
+    rack (1.4.1)
+    therubyracer (0.10.2)
+      libv8 (~> 3.3.10)
+    tilt (1.3.3)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  spiral-galaxy!

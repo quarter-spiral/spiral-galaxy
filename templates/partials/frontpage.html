@@ -8,7 +8,7 @@
       <div id="myCarousel" class="carousel slide">
         <!-- Carousel items -->
         <div class="carousel-inner">
-          <div class="item" ng-class="{active: $first}" ng-repeat="game in gamesList('popular') | limitTo:3">
+          <div class="item" ng-class="{active: $first}" ng-repeat="game in games.popular | limitTo:3">
             <div class="feature large" style="background-image: url('{{game.promoImage}}');">
               <div class="banner">
                 <div class="title">{{game.name}}</div>
@@ -28,7 +28,7 @@
       <div id="myCarousel2" class="carousel slide">
         <!-- Carousel items -->
         <div class="carousel-inner">
-          <div class="item" ng-class="{active: $first}" ng-repeat="game in gamesList('friends') | limitTo:3">
+          <div class="item" ng-class="{active: $first}" ng-repeat="game in games.friends | limitTo:3">
             <div class="feature large" style="background-image: url('{{game.promoImage}}');">
               <div class="banner">
                 <div class="title">{{game.name}}</div>
@@ -49,7 +49,7 @@
 
       <div class="row" ng-controller="GamesController">
 
-        <div class="span2" ng-repeat="game in gamesList('recently') | limitTo:4">
+        <div class="span2" ng-repeat="game in games.recently | limitTo:4">
 
           <div class="feature" style="background-image: url('{{game.promoImage}}');">
             <div class="banner">
@@ -104,7 +104,7 @@
         </ul>
         <div class="tab-content">
           <ul class="gamesList" >
-            <li ng-repeat="game in gamesList(type)">
+            <li ng-repeat="game in games[type]">
             <div class="media" style="background-image: url('{{game.promoImage}}');">
             </div>
             <div class="info">
@@ -126,7 +126,7 @@
     <div class="box">
       <h2>You recently played:</h2>
       <ol>
-        <li ng-repeat="game in gamesList('recently')">
+        <li ng-repeat="game in games.recently">
         <a href="#">
           <img src="{{game.promoImage}}" height="40px" width="50px" />
           <span class="title">{{game.name}}</span>

@@ -1,7 +1,7 @@
 require 'bundler'
 Bundler.require
 
-ENV["RACK_ENV"] = "development"
+ENV["RACK_ENV"] ||= "development"
 
 require 'spiral-galaxy'
 

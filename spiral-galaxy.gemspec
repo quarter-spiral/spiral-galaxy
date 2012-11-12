@@ -8,8 +8,8 @@ Gem::Specification.new do |gem|
   gem.version       = Spiral::Galaxy::VERSION
   gem.authors       = ["Thorben Schröder"]
   gem.email         = ["stillepost@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.description   = %q{The Quarter Spiral game portal}
+  gem.summary       = %q{The Quarter Spiral game portal}
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($/)
@@ -23,6 +23,6 @@ Gem::Specification.new do |gem|
   gem.add_dependency 'less'
   gem.add_dependency 'omniauth-oauth2'
 
-  gem.add_dependency 'angular-commons-middleware', '>= 0.0.2'
+  #gem.add_dependency 'angular-commons-middleware', '>= 0.0.2'
   gem.add_dependency 'thin'
 end

@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     spiral-galaxy (0.0.2)
-      angular-commons-middleware (>= 0.0.2)
+      angular-commons-middleware (>= 0.0.3)
       brochure
       coffee-script
       less
@@ -14,7 +14,7 @@ GEM
   remote: http://rubygems.org/
   remote: https://user:We267RFF7BfwVt4LdqFA@privategems.herokuapp.com/
   specs:
-    angular-commons-middleware (0.0.2)
+    angular-commons-middleware (0.0.3)
       brochure
       coffee-script
       json

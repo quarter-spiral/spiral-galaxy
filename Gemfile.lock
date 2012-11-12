@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    spiral-galaxy (0.0.2)
+    spiral-galaxy (0.0.3)
       angular-commons-middleware (>= 0.0.3)
       brochure
       coffee-script

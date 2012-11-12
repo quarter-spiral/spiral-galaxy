@@ -14,9 +14,7 @@ retrievedGames = {}
     new: []
   }
 
-  games.allGames().then (data) ->
-    games = data.games
-
+  games.allGames().then (games) ->
     $scope.games.friends = games
     $scope.games.recently = games
     $scope.games.popular = games

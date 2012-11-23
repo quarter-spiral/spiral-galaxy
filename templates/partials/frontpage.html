@@ -105,17 +105,24 @@
         <div class="tab-content">
           <ul class="gamesList" >
             <li ng-repeat="game in games[type]">
-            <div class="media" style="background-image: url('{{game.promoImage}}');">
-            </div>
-            <div class="info">
               <h3><a href="#">{{game.name}}</a></h3>
-              <div class="description">
-                <p>{{game.description}}</p>
+              <div class="media" style="background-image: url('{{game.promoImage}}');">
               </div>
-              <div class="meta">
-                <p><a href="#/profile">Ethan</a> & <a href="#/profile">Thorben</a> have played Title.</p>
+              <div class="info">
+                
+                <div class="description">
+                  <p>{{game.description}}</p>
+                </div>
+                <div class="meta">
+                  <p>Availabe on: <a href="#">Spiral Galaxy</a>, <a href="#">Facebook</a></p>
+                  <p>Friends playing: <a href="#/profile">Ethan</a>, <a href="#/profile">Thorben</a></p>
+                </div>
+                <div class="playShare">
+                  <a href="#" class="btn btn-primary"><strong>Play Now</strong></a> <a href="#" class="btn"><i class="icon-star-empty"></i> Favorite</a> <a href="#" class="btn"><i class="icon-share"></i> <strong>Share</strong> / Embed</a>
+                   
+                </div>
+                
               </div>
-            </div>
             </li>
           </ul>
         </div>

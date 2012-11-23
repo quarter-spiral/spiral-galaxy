@@ -1,5 +1,6 @@
 body {
 	background-color:#EEE;
+	background: url("/images/use-your-illusion.png") repeat top left;
 }
 
 
@@ -39,11 +40,10 @@ body {
 		color:#666;
 		text-align:center;
 		font-weight:normal;
-		color:#999;
 	}
 	.feature {
 		height:@singleFeatureHeight;
-		background-color:#DDD;
+		background-color:#333;
 		overflow:hidden;
 		margin-bottom: @featureMargin;
 		position:relative;
@@ -95,8 +95,8 @@ body {
 					float:left;
 					width:50px;
 					height:40px;
-					border:1px solid #DDD;
-					background-color:#DDD;
+					border:0px solid #333;
+					background-color:#333;
 				}
 				span {
 					display:block;
@@ -163,7 +163,10 @@ body {
 }
 
 
-
+hr {
+	border-width:0px;
+	border-top:1px dashed #AAA;
+}
 
 @mediaWidth: 150px;
 @mediaHeight: 120px;

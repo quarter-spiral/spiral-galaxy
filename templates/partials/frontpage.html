@@ -118,7 +118,7 @@
                   <p>Friends playing: <a href="#/profile">Ethan</a>, <a href="#/profile">Thorben</a></p>
                 </div>
                 <div class="playShare">
-                  <a href="#" class="btn btn-primary"><strong>Play Now</strong></a> <a href="#" class="btn"><i class="icon-star-empty"></i> Favorite</a> <a href="#" class="btn"><i class="icon-share"></i> <strong>Share</strong> / Embed</a>
+                  <a  class="btn btn-primary"><strong>Play Now</strong></a> <a href="#" class="btn"><i class="icon-star-empty"></i> Favorite</a> <a href="#share" role="button" class="btn" data-toggle="modal"><i class="icon-share"></i> <strong>Share</strong> / Embed</a>
                    
                 </div>
                 
@@ -150,4 +150,24 @@
     </div>
   </div>
 
+</div>
+
+
+
+
+
+<!-- Modal -->
+<div id="share" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Share...</h3>
+  </div>
+  <div class="modal-body">
+    <p>URL on Spiral Galaxy:</p>
+    <p>Share with the usual suspects</p>
+    <p>Embed code, use anywhere!</p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+  </div>
 </div>

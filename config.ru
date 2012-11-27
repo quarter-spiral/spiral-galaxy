@@ -34,7 +34,7 @@ map "/auth/auth_backend/callback" do
 end
 
 # Actual app
-ENV_KEYS_TO_EXPOSE = ['QS_DEVCENTER_BACKEND_URL', 'QS_CANVAS_APP_URL', 'QS_S3_HOST', 'QS_AUTH_BACKEND_URL']
+ENV_KEYS_TO_EXPOSE = ['QS_DEVCENTER_BACKEND_URL', 'QS_PLAYERCENTER_BACKEND_URL', 'QS_CANVAS_APP_URL', 'QS_S3_HOST', 'QS_AUTH_BACKEND_URL']
 
 root = File.dirname(__FILE__)
 brochure = Brochure.app(root)

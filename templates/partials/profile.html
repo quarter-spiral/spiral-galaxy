@@ -16,7 +16,7 @@
     <div class="box">
       <h2>Recently Activity</h2>
       <ol>
-        <li ng-repeat="game in gamesList('recently')">
+        <li ng-repeat="game in games.recently">
           <a href="#">
             <img src="#" height="40px" width="50px" />
             <span class="title">Played {{game.name}}</span>
@@ -30,7 +30,7 @@
     <div class="box">
       <h2>Ethan's starred games</h2>
       <ol>
-        <li ng-repeat="game in gamesList('recently')">
+        <li ng-repeat="game in games.recently">
           <a href="#">
             <img src="{{game.promoImage}}" height="40px" width="50px" />
             <span class="title">Played {{game.name}}</span>

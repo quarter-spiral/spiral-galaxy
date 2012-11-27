@@ -23,7 +23,7 @@
       </div>
     </div>
 
-    <div class="span4" ng-controller="GamesController">
+    <div class="span4" ng-controller="GamesController" ng-show="loggedIn">
       <h2>Featured Friends Play</h2>
       <div id="myCarousel2" class="carousel slide">
         <!-- Carousel items -->
@@ -43,12 +43,10 @@
       </div>
     </div>
 
-    <div class="span4">
-
+    <div class="span4" ng-show="loggedIn">
       <h2>Play it again</h2>
 
       <div class="row" ng-controller="GamesController">
-
         <div class="span2" ng-repeat="game in games.recently | limitTo:4">
 
           <div class="feature" style="background-image: url('{{game.promoImage}}');">
@@ -57,7 +55,6 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
 
@@ -130,7 +127,7 @@
       </div>
     </div>
   </div>
-  <div class="span3" id="recentlyPlayed" ng-controller="GamesController">
+  <div class="span3" id="recentlyPlayed" ng-controller="GamesController" ng-show="loggedIn">
     <div class="box">
       <h2>You recently played:</h2>
       <ol>

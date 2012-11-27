@@ -15,9 +15,14 @@ retrievedGames = {}
   }
 
   games.allGames().then (games) ->
-    $scope.games.friends = games
-    $scope.games.recently = games
     $scope.games.popular = games
     $scope.games.new = games
+
+  if $scope.loggedIn
+    games.myGames().then (games) ->
+      $scope.games.recently = games
+
+    games.friendsGames().then (games) ->
+      $scope.games.friends = games
 
 @GamesController.$inject = ["$scope", "games"]

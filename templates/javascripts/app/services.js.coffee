@@ -29,7 +29,7 @@ services.factory "games", ["$rootScope", "$cookies", "qs_commons_user", "qs_comm
         url: "#{playercenterUrl}/v1/#{user.currentUser().uuid}/games?venue=spiral-galaxy"
         returns: (data) ->
           games = []
-          for games in data.games
+          for game in data.games
             games.promoImage = (game.screenshots[0] || {}).url
             games.push game
           games
@@ -38,10 +38,10 @@ services.factory "games", ["$rootScope", "$cookies", "qs_commons_user", "qs_comm
     friendsGames: ->
       http.makeRequest(
         method: 'GET',
-        url: "#{playercenterUrl}/v1/#{user.currentUser().uuid}/games/friends?venue=spiral-galaxy"
+        url: "#{playercenterUrl}/v1/#{user.currentUser().uuid}/games/friends" #?venue=spiral-galaxy"
         returns: (data) ->
           games = []
-          for games in data.games
+          for game in data.games
             games.promoImage = (game.screenshots[0] || {}).url
             games.push game
           games

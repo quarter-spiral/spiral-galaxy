@@ -4,11 +4,11 @@
   <div class="row" >
 
     <div class="span4" ng-controller="GamesController">
-      <h2>Featured Top Games</h2>
+      <h2>Random Games</h2>
       <div id="myCarousel" class="carousel slide">
         <!-- Carousel items -->
         <div class="carousel-inner">
-          <div class="item" ng-class="{active: $first}" ng-repeat="game in games.popular | limitTo:3">
+          <div class="item" ng-class="{active: $first}" ng-repeat="game in games.all | limitTo:3">
             <div class="feature large" style="background-image: url('{{game.promoImage}}');">
               <div class="banner">
                 <div class="title">{{game.name}}</div>
@@ -91,13 +91,12 @@
   </div>
 
 
-  <div class="span7" ng-controller="GamesController">
+  <div class="span10" ng-controller="GamesController">
     <div class="box" >
       <div class="tabbable"> <!-- Only required for left/right tabs -->
-        <ul class="nav nav-tabs" ng-init="type = 'popular'">
-          <li ng-class="{active: type == 'popular'}"><a ng-click="type = 'popular'">Popular</a></li>
+        <ul class="nav nav-tabs" ng-init="type = 'all'">
+          <li ng-class="{active: type == 'all'}"><a ng-click="type = 'all'">All</a></li>
           <li ng-class="{active: type == 'friends'}"><a ng-click="type = 'friends'">Played by Friends</a></li>
-          <li ng-class="{active: type == 'new'}"><a ng-click="type = 'new'">New</a></li>
         </ul>
         <div class="tab-content">
           <ul class="gamesList" >
@@ -127,6 +126,8 @@
       </div>
     </div>
   </div>
+
+  <!--
   <div class="span3" id="recentlyPlayed" ng-controller="GamesController" ng-show="loggedIn">
     <div class="box">
       <h2>You recently played:</h2>
@@ -147,6 +148,7 @@
       <p><a class="btn" href="#">View details &raquo;</a></p>
     </div>
   </div>
+  -->
 
 </div>
 

@@ -11,12 +11,11 @@ retrievedGames = {}
     friends: []
     recently: []
     popular: []
-    new: []
+    all: []
   }
 
   games.allGames().then (games) ->
-    $scope.games.popular = games
-    $scope.games.new = games
+    $scope.games.all = games
 
   if $scope.loggedIn
     games.myGames().then (games) ->

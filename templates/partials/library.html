@@ -1,7 +1,7 @@
 <div class="row">
   <div class="span10 offset2" >
     <div class="page-header">
-      <h1><a href="#/profile">Ethan's</a> game library</h1>
+      <h1><a href="#/profile">{{currentUser.name}}'s</a> game library</h1>
     </div>
   </div>
 </div>  
@@ -31,10 +31,9 @@
   <div class="span10" ng-controller="GamesController">
     <div class="box" >
       <div class="tabbable"> <!-- Only required for left/right tabs -->
-        <ul class="nav nav-tabs" ng-init="type = 'popular'">
-          <li ng-class="{active: type == 'popular'}"><a ng-click="type = 'popular'">All</a></li>
-          <li ng-class="{active: type == 'friends'}"><a ng-click="type = 'friends'">Played Only</a></li>
-          <li ng-class="{active: type == 'new'}"><a ng-click="type = 'new'"><i class="icon-star"></i> Starred Only</a></li>
+        <ul class="nav nav-tabs" ng-init="type = 'played'">
+          <li ng-class="{active: type == 'played'}"><a ng-click="type = 'played'">Played</a></li>
+          <li ng-class="{active: type == 'starred'}"><a ng-click="type = 'starred'"><i class="icon-star"></i> Starred</a></li>
         </ul>
         <div class="tab-content">
           <ul class="gamesList" >

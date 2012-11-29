@@ -1,6 +1,6 @@
 <div class="row" id="profileHeader">
   <div class="span9" >
-    <h1>Ethan Levy</h1>
+    <h1>{{currentUser.name}}</h1>
     <div class="profileText">
       <p>A 10 year veteran designer and producer, Ethan has made games big and small at BioWare, Pandemic Studios, PlayFirst and iWin.</p>
     </div>
@@ -12,23 +12,9 @@
   </div>
 </div>  
 <div class="row">
-  <div class="span6" id="activity" ng-controller="GamesController">
+  <div class="span9" id="recentlyPlayed" ng-controller="GamesController">
     <div class="box">
-      <h2>Recently Activity</h2>
-      <ol>
-        <li ng-repeat="game in games.recently">
-          <a href="#">
-            <img src="#" height="40px" width="50px" />
-            <span class="title">Played {{game.name}}</span>
-            <span class="info">2 hours ago</span>
-          </a>
-        </li>
-      </ol>
-    </div>
-  </div>
-  <div class="span3" id="recentlyPlayed" ng-controller="GamesController">
-    <div class="box">
-      <h2>Ethan's starred games</h2>
+      <h2>{{currentUser.name}}'s games</h2>
       <ol>
         <li ng-repeat="game in games.recently">
           <a href="#">
@@ -38,12 +24,12 @@
           </a>
         </li>
       </ol>
-      <p><a class="btn" href="/#/library">Ethan's entire Library &raquo;</a></p>
+      <p><a class="btn" href="/#/library">Browse Library</a></p>
     </div>
   </div>
   <div class="span3" id="recentlyPlayed" ng-controller="GamesController">
     <div class="box">
-      <h2>Ethan's Friends</h2>
+      <h2>{{currentUser.name}}'s Friends</h2>
     </div>
   </div>
 </div>

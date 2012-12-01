@@ -1,3 +1,7 @@
+# 0.0.5 WIP
+
+* Removes debug left overs
+
 # 0.0.4
 
 * Adds the ``/play/:uuid:`` endpoint to play games

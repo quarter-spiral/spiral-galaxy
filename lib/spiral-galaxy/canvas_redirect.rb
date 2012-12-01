@@ -35,11 +35,6 @@ module Spiral::Galaxy
       else
         redirect_to '/'
       end
-    rescue Exception => e
-      require 'pp'
-      p e.message
-      pp e.backtrace
-      raise e
     end
 
     protected

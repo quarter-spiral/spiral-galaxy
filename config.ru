@@ -18,26 +18,4 @@ if ENV['RACK_ENV'] == 'production'
   end
 end
 
-# QS Auth
-use Rack::Session::Cookie, key: 'qs_spiral_galaxy'
-use OmniAuth::Builder do
-  provider Spiral::Galaxy::AuthBackend, ENV['QS_OAUTH_CLIENT_ID'], ENV['QS_OAUTH_CLIENT_SECRET']
-end
-
-map "/auth/auth_backend/callback" do
-  run Proc.new { |env|
-    response = Rack::Response.new('', 301, 'Location' => '/')
-    response.set_cookie('qs_authentication', value: JSON.dump(env['omniauth.auth']), path: '/')
-
-    response
-  }
-end
-
-# Actual app
-ENV_KEYS_TO_EXPOSE = ['QS_DEVCENTER_BACKEND_URL', 'QS_PLAYERCENTER_BACKEND_URL', 'QS_CANVAS_APP_URL', 'QS_S3_HOST', 'QS_AUTH_BACKEND_URL']
-
-root = File.dirname(__FILE__)
-brochure = Brochure.app(root)
-use Angular::Commons::Middleware
-
-run brochure
+run Spiral::Galaxy::App.new

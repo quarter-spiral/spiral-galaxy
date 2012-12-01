@@ -1,5 +1,6 @@
 # 0.0.4 WIP
 
+* Adds the ``/play/:uuid:`` endpoint to play games
 * Shows friends from all venues
 
 # 0.0.3

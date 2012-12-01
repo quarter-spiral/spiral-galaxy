@@ -273,4 +273,3 @@ function setupModuleLoader(window) {
  * } }
  */
 angular.Module;
-

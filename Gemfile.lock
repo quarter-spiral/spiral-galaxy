@@ -1,10 +1,30 @@
+GIT
+  remote: https://github.com/quarter-spiral/oauth2-provider.git
+  revision: 5a3add849c4cba541c373ce7aea96bf384761104
+  specs:
+    songkick-oauth2-provider (0.10.0)
+      activerecord
+      bcrypt-ruby
+      json
+      rack
+
+GIT
+  remote: https://github.com/quarter-spiral/sinatra_warden.git
+  revision: 70d3037017c2ca6f69849e4e1e6deb438f242f16
+  specs:
+    sinatra_warden (0.3.2)
+      sinatra (>= 1.0.0)
+      warden (~> 1.0)
+
 PATH
   remote: .
   specs:
     spiral-galaxy (0.0.3)
       angular-commons-middleware (>= 0.0.3)
+      auth-client (>= 0.0.14)
       brochure
       coffee-script
+      devcenter-client (>= 0.0.3)
       less
       omniauth-oauth2
       therubyracer
@@ -14,37 +34,169 @@ GEM
   remote: http://rubygems.org/
   remote: https://user:We267RFF7BfwVt4LdqFA@privategems.herokuapp.com/
   specs:
+    actionpack (3.2.9)
+      activemodel (= 3.2.9)
+      activesupport (= 3.2.9)
+      builder (~> 3.0.0)
+      erubis (~> 2.7.0)
+      journey (~> 1.0.4)
+      rack (~> 1.4.0)
+      rack-cache (~> 1.2)
+      rack-test (~> 0.6.1)
+      sprockets (~> 2.2.1)
+    activemodel (3.2.9)
+      activesupport (= 3.2.9)
+      builder (~> 3.0.0)
+    activerecord (3.2.9)
+      activemodel (= 3.2.9)
+      activesupport (= 3.2.9)
+      arel (~> 3.0.2)
+      tzinfo (~> 0.3.29)
+    activesupport (3.2.9)
+      i18n (~> 0.6)
+      multi_json (~> 1.0)
+    addressable (2.3.2)
     angular-commons-middleware (0.0.3)
       brochure
       coffee-script
       json
       therubyracer
+    arel (3.0.2)
+    auth-backend (0.0.17)
+      activerecord (>= 3.2.9)
+      bcrypt-ruby
+      graph-client
+      json
+      kaminari
+      padrino-helpers
+      sinatra
+      sinatra-activerecord
+      sinatra-flash
+      thin
+      uuid
+    auth-client (0.0.14)
+      service-client (>= 0.0.8)
+    backports (2.6.5)
+    bcrypt-ruby (3.0.1)
     brochure (0.5.4)
       hike (~> 1.0)
       rack (~> 1.0)
       tilt (~> 1.1)
+    bson (1.6.4)
+    builder (3.0.4)
+    capybara (1.1.4)
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      selenium-webdriver (~> 2.0)
+      xpath (~> 0.1.4)
+    capybara_minitest_spec (0.2.2)
+      capybara
+      minitest (>= 2.0)
+    childprocess (0.3.6)
+      ffi (~> 1.0, >= 1.0.6)
     coffee-script (2.2.0)
       coffee-script-source
       execjs
     coffee-script-source (1.4.0)
+    commander (4.1.2)
+      highline (~> 1.6.11)
     commonjs (0.2.6)
     daemons (1.1.9)
+    datastore-backend (0.0.11)
+      auth-client (>= 0.0.6)
+      grape (= 0.2.3.qs)
+      json (= 1.7.4)
+      mongoid (= 2.4.11)
+      rack-jsonp-middleware (= 0.0.5)
+      uuid
+    datastore-client (0.0.9)
+      commander
+      json
+      service-client (>= 0.0.7)
+    devcenter-backend (0.0.25)
+      auth-client (>= 0.0.14)
+      datastore-client (>= 0.0.9)
+      grape (= 0.2.3.qs)
+      graph-client (>= 0.0.9)
+      json (= 1.7.4)
+    devcenter-client (0.0.3)
+      service-client (>= 0.0.9)
+    erubis (2.7.0)
     eventmachine (1.0.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
-    faraday (0.8.4)
+    faraday (0.8.1)
       multipart-post (~> 1.1)
+    faye-websocket (0.4.6)
+      eventmachine (>= 0.12.0)
+    ffi (1.2.0)
+    grape (0.2.3.qs)
+      activesupport
+      hashie (~> 1.2)
+      multi_json (>= 1.3.2)
+      multi_xml
+      rack
+      rack-accept
+      rack-mount
+      virtus
+    graph-backend (0.0.14)
+      auth-client (>= 0.0.14)
+      grape (>= 0.2.0)
+      json (= 1.7.4)
+      neography (= 1.0.2)
+    graph-client (0.0.10)
+      commander
+      service-client (>= 0.0.9)
     hashie (1.2.0)
+    highline (1.6.15)
     hike (1.2.1)
+    http_parser.rb (0.5.3)
+    http_router (0.10.2)
+      rack (>= 1.0.0)
+      url_mount (~> 0.2.1)
+    httparty (0.9.0)
+      multi_json (~> 1.0)
+      multi_xml
     httpauth (0.2.0)
-    json (1.7.5)
+    i18n (0.6.1)
+    journey (1.0.4)
+    json (1.7.4)
     jwt (0.1.5)
       multi_json (>= 1.0)
+    kaminari (0.14.1)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
+    launchy (2.1.1)
+      addressable (~> 2.3)
     less (2.2.2)
       commonjs (~> 0.2.6)
     libv8 (3.3.10.4)
+    libwebsocket (0.1.7.1)
+      addressable
+      websocket
+    macaddr (1.6.1)
+      systemu (~> 2.5.0)
+    mime-types (1.19)
+    minitest (4.3.2)
+    mongo (1.6.2)
+      bson (~> 1.6.2)
+    mongoid (2.4.11)
+      activemodel (~> 3.1)
+      mongo (<= 1.6.2)
+      tzinfo (~> 0.3.22)
     multi_json (1.3.7)
+    multi_xml (0.5.1)
     multipart-post (1.1.5)
+    neography (1.0.2)
+      httparty (>= 0.8.1)
+      json (>= 1.6.0)
+      multi_json (>= 1.3.2)
+      os (>= 0.9.6)
+      rake (>= 0.8.7)
+      rubyzip (>= 0.9.7)
+    nokogiri (1.5.5)
     oauth2 (0.8.0)
       faraday (~> 0.8)
       httpauth (~> 0.1)
@@ -57,17 +209,102 @@ GEM
     omniauth-oauth2 (1.1.1)
       oauth2 (~> 0.8.0)
       omniauth (~> 1.0)
+    os (0.9.6)
+    padrino-core (0.10.7)
+      activesupport (~> 3.2.0)
+      http_router (~> 0.10.2)
+      sinatra (~> 1.3.1)
+      thor (~> 0.15.2)
+      tilt (~> 1.3.0)
+    padrino-helpers (0.10.7)
+      i18n (~> 0.6)
+      padrino-core (= 0.10.7)
+    poltergeist (1.0.2)
+      capybara (~> 1.1)
+      childprocess (~> 0.3)
+      faye-websocket (~> 0.4, >= 0.4.4)
+      http_parser.rb (~> 0.5.3)
+      multi_json (~> 1.0)
     rack (1.4.1)
+    rack-accept (0.4.5)
+      rack (>= 0.4)
+    rack-cache (1.2)
+      rack (>= 0.4)
+    rack-client (0.4.0)
+      rack (>= 1.0.0)
+    rack-jsonp-middleware (0.0.5)
+      rack
+    rack-mount (0.8.3)
+      rack (>= 1.0.0)
+    rack-protection (1.2.0)
+      rack
+    rack-test (0.6.2)
+      rack (>= 1.0)
+    rake (10.0.2)
+    rubyzip (0.9.9)
+    selenium-webdriver (2.26.0)
+      childprocess (>= 0.2.5)
+      libwebsocket (~> 0.1.3)
+      multi_json (~> 1.0)
+      rubyzip
+    service-client (0.0.9)
+      faraday (= 0.8.1)
+      json
+    sinatra (1.3.3)
+      rack (~> 1.3, >= 1.3.6)
+      rack-protection (~> 1.2)
+      tilt (~> 1.3, >= 1.3.3)
+    sinatra-activerecord (1.1.2)
+      activerecord (~> 3.0)
+      sinatra (~> 1.0)
+    sinatra-flash (0.3.0)
+      sinatra (>= 1.0.0)
+    sprockets (2.2.1)
+      hike (~> 1.2)
+      multi_json (~> 1.0)
+      rack (~> 1.0)
+      tilt (~> 1.1, != 1.3.0)
+    sqlite3 (1.3.6)
+    systemu (2.5.2)
     therubyracer (0.10.2)
       libv8 (~> 3.3.10)
     thin (1.5.0)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
       rack (>= 1.0.0)
+    thor (0.15.4)
     tilt (1.3.3)
+    tzinfo (0.3.35)
+    url_mount (0.2.1)
+      rack
+    uuid (2.3.6)
+      macaddr (~> 1.0)
+    virtus (0.5.2)
+      backports (~> 2.6.1)
+    warden (1.2.1)
+      rack (>= 1.0)
+    websocket (1.0.4)
+    xpath (0.1.4)
+      nokogiri (~> 1.3)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  auth-backend (>= 0.0.17)
+  capybara
+  capybara_minitest_spec
+  datastore-backend (>= 0.0.11)
+  devcenter-backend (>= 0.0.25)
+  graph-backend (>= 0.0.14)
+  json
+  launchy
+  nokogiri
+  poltergeist
+  rack-client
+  rake
+  sinatra_warden!
+  songkick-oauth2-provider!
   spiral-galaxy!
+  sqlite3
+  uuid

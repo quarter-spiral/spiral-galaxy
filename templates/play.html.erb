@@ -1,0 +1,13 @@
+<html>
+<head>
+  <title>Redirecting to the game…</title>
+</head>
+<body>
+<form action="<%= canvas_url %>" method="post" id="redirect-form">
+  <input type="hidden" name="signed_request" value="<%= signed_request %>"/>
+</form>
+<script type="text/javascript">
+  document.forms["redirect-form"].submit();
+</script>
+</body>
+</html>

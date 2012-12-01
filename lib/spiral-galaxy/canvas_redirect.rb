@@ -52,6 +52,7 @@ module Spiral::Galaxy
     def sign_player_info(player, secret)
       player_info = {
         'algorithm' => 'HMAC-SHA256',
+        'oauth_token' => player['token'],
         'uuid' => player['uuid'],
         'name' => player['name']
       }

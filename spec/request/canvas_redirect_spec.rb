@@ -21,7 +21,7 @@ end
 ENV['QS_AUTH_BACKEND_URL'] = 'http://auth-backend.dev'
 
 def login(uuid, name)
-  Capybara.current_session.driver.set_cookie('qs_authentication', CGI::escape(JSON.dump(info: {uuid: uuid, name: name})))
+  Capybara.current_session.driver.set_cookie('qs_authentication', CGI::escape(JSON.dump(info: {uuid: uuid, name: name, token: "some-token-#{Time.now.to_f}"})))
 end
 
 # Methods to decode signed requests taken from https://github.com/nsanta/fbgraph/blob/master/lib/fbgraph/canvas.rb
@@ -105,6 +105,7 @@ describe CanvasRedirect do
     result = parse_signed_request(secret, signed_request)
     result['uuid'].must_equal @player['uuid']
     result['name'].must_equal @player['name']
+    result['oauth_token'].wont_be_nil
   end
 
   it "redirects to the spiral-galaxy index if not logged in" do

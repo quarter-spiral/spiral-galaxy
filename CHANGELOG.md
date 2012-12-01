@@ -1,5 +1,6 @@
 # 0.0.5 WIP
 
+* Adds OAuth token to the signed info passed to the canvas-app
 * Removes debug left overs
 
 # 0.0.4

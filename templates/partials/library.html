@@ -4,7 +4,7 @@
       <h1><a href="#/profile">{{currentUser.name}}'s</a> game library</h1>
     </div>
   </div>
-</div>  
+</div>
 <div class="row">
 
   <div class="span2">
@@ -42,7 +42,7 @@
               <div class="media" style="background-image: url('{{game.promoImage}}');">
               </div>
               <div class="info">
-                
+
                 <div class="description">
                   <p>{{game.description}}</p>
                 </div>
@@ -51,12 +51,12 @@
                   <p>Friends playing: <a href="#/profile">Ethan</a>, <a href="#/profile">Thorben</a></p>
                 </div>
                 <div class="playShare">
-                  <a  class="btn btn-success"><strong>Play Now</strong></a>
+                  <a  class="btn btn-success" href="/play/{{game.uuid}}"><strong>Play Now</strong></a>
                   <a class="btn" href="#share" role="button" class="" data-toggle="modal"><i class="icon-share"></i> <strong>Share</strong> / Embed</a>
                   <a  class="btn"><i class="icon-star-empty"></i></a>
-                   
+
                 </div>
-                
+
               </div>
             </li>
           </ul>

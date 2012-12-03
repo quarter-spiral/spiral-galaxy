@@ -1,3 +1,7 @@
+# 0.0.6 WIP
+
+* Makes "Play Now" links work
+
 # 0.0.5
 
 * Adds OAuth token to the signed info passed to the canvas-app

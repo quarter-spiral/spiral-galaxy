@@ -1,3 +1,7 @@
+# 0.0.7
+
+* Removes unnecessary app filters in the UI
+
 # 0.0.6
 
 * Makes "Play Now" links work

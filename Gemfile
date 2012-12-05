@@ -7,7 +7,7 @@ gem 'json'
 
 group :development, :test do
   gem 'auth-backend', '>= 0.0.17'
-  gem 'devcenter-backend', '>= 0.0.25'
+  gem 'devcenter-backend', '>= 0.0.26'
   gem 'datastore-backend', '>= 0.0.11'
   gem 'graph-backend', '>= 0.0.14'
 

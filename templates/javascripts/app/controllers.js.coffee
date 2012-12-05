@@ -7,6 +7,8 @@
 
 retrievedGames = {}
 @GamesController = ($scope, games) ->
+  $scope.envs = window.qs.ENV
+
   $scope.games = {
     friends: []
     recently: []

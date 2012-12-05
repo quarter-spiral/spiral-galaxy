@@ -111,7 +111,11 @@
                   <p>{{game.description}}</p>
                 </div>
                 <div class="meta">
-                  <p><a href="#" class="label">Spiral Galaxy</a> <a href="#" class="label">Facebook</a>
+                  <p>
+                    <span ng-repeat="venue in game.venues">
+                      <a href="{{envs.QS_CANVAS_APP_URL}}/v1/games/{{game.uuid}}/{{venue}}" class="label">{{venue | humanize}}</a>
+                    </span>
+                  </p>
                 </div>
                 <div class="playShare">
                   <a class="btn btn-success" href="/play/{{game.uuid}}"><strong>Play Now</strong></a>

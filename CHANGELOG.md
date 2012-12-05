@@ -1,5 +1,6 @@
 # 0.0.8 WIP
 
+* Adds dynamic venue links to each game
 * Fixes missing screenshot for games
 
 # 0.0.7

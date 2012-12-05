@@ -115,7 +115,7 @@ GEM
       commander
       json
       service-client (>= 0.0.7)
-    devcenter-backend (0.0.25)
+    devcenter-backend (0.0.26)
       auth-client (>= 0.0.14)
       datastore-client (>= 0.0.9)
       grape (= 0.2.3.qs)
@@ -295,7 +295,7 @@ DEPENDENCIES
   capybara
   capybara_minitest_spec
   datastore-backend (>= 0.0.11)
-  devcenter-backend (>= 0.0.25)
+  devcenter-backend (>= 0.0.26)
   graph-backend (>= 0.0.14)
   json
   launchy

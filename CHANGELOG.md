@@ -1,5 +1,6 @@
 # 0.0.8 WIP
 
+* Adds a info message to the recently played block if no games played yet
 * Adds dynamic venue links to each game
 * Fixes missing screenshot for games
 

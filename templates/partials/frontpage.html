@@ -47,7 +47,8 @@
       <h2>Play it again</h2>
 
       <div class="row" ng-controller="GamesController">
-        <div class="span2" ng-repeat="game in games.recently | limitTo:4">
+        <p ng-show="games.recently | empty">You have not played any Quarter Spiral Games yet!</p>
+        <div class="span2" ng-repeat="game in games.recently | limitTo:4" ng-hide="games.recently | empty">
 
           <div class="feature" style="background-image: url('{{game.promoImage}}');">
             <div class="banner">

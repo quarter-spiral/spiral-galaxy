@@ -119,7 +119,7 @@
                   </p>
                 </div>
                 <div class="playShare">
-                  <a class="btn btn-success" href="/play/{{game.uuid}}"><strong>Play Now</strong></a>
+                  <a class="btn btn-success" href="/play/{{game.uuid}}" ng-hide="!(game.venues|include:'spiral-galaxy')"><strong>Play Now</strong></a>
                   <a class="btn" href="#share" role="button" class="" data-toggle="modal"><i class="icon-share"></i> <strong>Share</strong> / Embed</a>
                   <a class="btn"><i class="icon-star-empty"></i></a>
 

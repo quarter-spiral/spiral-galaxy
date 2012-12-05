@@ -1,5 +1,6 @@
 # 0.0.8 WIP
 
+* Hides play now button if game not available on spiral-galaxy
 * Adds a info message to the recently played block if no games played yet
 * Adds dynamic venue links to each game
 * Fixes missing screenshot for games

@@ -6,4 +6,7 @@
 ).filter('empty', ->
   (input) ->
     input.length == 0
+).filter('include', ->
+  (haystack, needle) ->
+    needle in haystack
 )

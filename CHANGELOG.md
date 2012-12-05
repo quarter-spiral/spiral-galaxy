@@ -1,5 +1,6 @@
 # 0.0.8 WIP
 
+* Shows/Hides promotional spots at the top if there are/aren't friend's and played games
 * Hides play now button if game not available on spiral-galaxy
 * Adds a info message to the recently played block if no games played yet
 * Adds dynamic venue links to each game

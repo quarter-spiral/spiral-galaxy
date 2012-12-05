@@ -3,7 +3,7 @@
 <div id="promoBlock" ng-controller="FrontpageController">
   <div class="row" >
 
-    <div class="span4" ng-controller="GamesController">
+    <div ng-class="games.friends|empty|or:(games.recently|empty)|eitherOr:'span8':'span4'" ng-controller="GamesController">
       <h2>Random Games</h2>
       <div id="myCarousel" class="carousel slide">
         <!-- Carousel items -->
@@ -23,7 +23,7 @@
       </div>
     </div>
 
-    <div class="span4" ng-controller="GamesController" ng-show="loggedIn">
+    <div class="span4" ng-controller="GamesController" ng-show="loggedIn && (!(games.friends|empty))">
       <h2>Featured Friends Play</h2>
       <div id="myCarousel2" class="carousel slide">
         <!-- Carousel items -->
@@ -43,10 +43,10 @@
       </div>
     </div>
 
-    <div class="span4" ng-show="loggedIn">
+    <div class="span4" ng-show="loggedIn && (!(games.recently|empty))|or:(games.friends|empty)" ng-controller="GamesController">
       <h2>Play it again</h2>
 
-      <div class="row" ng-controller="GamesController">
+      <div class="row">
         <p ng-show="games.recently | empty">You have not played any Quarter Spiral Games yet!</p>
         <div class="span2" ng-repeat="game in games.recently | limitTo:4" ng-hide="games.recently | empty">
 

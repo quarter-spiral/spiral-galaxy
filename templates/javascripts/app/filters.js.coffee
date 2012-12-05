@@ -9,4 +9,10 @@
 ).filter('include', ->
   (haystack, needle) ->
     needle in haystack
+).filter('eitherOr', ->
+  (thisIsTrue, doThis, doThatOtherThing) ->
+    if thisIsTrue then doThis else doThatOtherThing
+).filter('or', ->
+  (thiz, that) ->
+    thiz or that
 )

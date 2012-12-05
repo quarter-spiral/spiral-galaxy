@@ -3,7 +3,16 @@
 <div id="promoBlock" ng-controller="FrontpageController">
   <div class="row" >
 
-    <div ng-class="games.friends|empty|or:(games.recently|empty)|eitherOr:'span8':'span4'" ng-controller="GamesController">
+    <div ng-hide="loggedIn" ng-controller="GamesController">
+      <h2>Random Games</h2>
+      <div ng-repeat="game in games.all" class="span4 feature large" style="background-image: url('{{game.promoImage}}');">
+        <div class="banner">
+          <div class="title">{{game.name}}</div>
+        </div>
+      </div>
+    </div>
+
+    <div ng-class="games.friends|empty|or:(games.recently|empty)|eitherOr:'span8':'span4'" ng-show="loggedIn" ng-controller="GamesController">
       <h2>Random Games</h2>
       <div id="myCarousel" class="carousel slide">
         <!-- Carousel items -->
@@ -43,7 +52,7 @@
       </div>
     </div>
 
-    <div class="span4" ng-show="loggedIn && (!(games.recently|empty))|or:(games.friends|empty)" ng-controller="GamesController">
+    <div class="span4" ng-show="loggedIn && ((!(games.recently|empty))|or:(games.friends|empty))" ng-controller="GamesController">
       <h2>Play it again</h2>
 
       <div class="row">

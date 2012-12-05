@@ -1,3 +1,7 @@
+# 0.0.8 WIP
+
+* Fixes missing screenshot for games
+
 # 0.0.7
 
 * Removes unnecessary app filters in the UI

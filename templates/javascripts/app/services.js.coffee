@@ -30,7 +30,7 @@ services.factory "games", ["$rootScope", "$cookies", "qs_commons_user", "qs_comm
         returns: (data) ->
           games = []
           for game in data.games
-            games.promoImage = (game.screenshots[0] || {}).url
+            game.promoImage = (game.screenshots[0] || {}).url
             games.push game
           games
       )
@@ -42,7 +42,7 @@ services.factory "games", ["$rootScope", "$cookies", "qs_commons_user", "qs_comm
         returns: (data) ->
           games = []
           for game in data.games
-            games.promoImage = (game.screenshots[0] || {}).url
+            game.promoImage = (game.screenshots[0] || {}).url
             games.push game
           games
       )

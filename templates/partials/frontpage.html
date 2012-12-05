@@ -5,7 +5,7 @@
 
     <div ng-hide="loggedIn" ng-controller="GamesController">
       <h2>Random Games</h2>
-      <div ng-repeat="game in games.all" class="span4 feature large" style="background-image: url('{{game.promoImage}}');">
+      <div ng-repeat="game in games.all | limitTo:3" class="span4 feature large" style="background-image: url('{{game.promoImage}}');">
         <div class="banner">
           <div class="title">{{game.name}}</div>
         </div>

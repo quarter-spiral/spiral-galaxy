@@ -1,4 +1,4 @@
-# 0.0.8 WIP
+# 0.0.8
 
 * Makes promotional random games appear next to each other when logged out
 * Shows/Hides promotional spots at the top if there are/aren't friend's and played games

@@ -19,7 +19,7 @@ GIT
 PATH
   remote: .
   specs:
-    spiral-galaxy (0.0.7)
+    spiral-galaxy (0.0.8)
       angular-commons-middleware (>= 0.0.3)
       auth-client (>= 0.0.14)
       brochure

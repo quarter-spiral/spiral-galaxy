@@ -18,7 +18,7 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
 
   gem.add_dependency 'brochure'
-  gem.add_dependency 'therubyracer'
+  gem.add_dependency 'therubyracer', '~> 0.10.2'
   gem.add_dependency 'coffee-script'
   gem.add_dependency 'less'
   gem.add_dependency 'omniauth-oauth2'

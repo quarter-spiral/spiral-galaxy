@@ -1,3 +1,7 @@
+# 0.0.10 WIP
+
+* Fixes bug to run on Heroku
+
 # 0.0.9
 
 * Fixes a bug that caused all games to be shown in top spot when logged out

@@ -19,7 +19,7 @@ GIT
 PATH
   remote: .
   specs:
-    spiral-galaxy (0.0.8)
+    spiral-galaxy (0.0.9)
       angular-commons-middleware (>= 0.0.3)
       auth-client (>= 0.0.14)
       brochure
@@ -172,7 +172,6 @@ GEM
       addressable (~> 2.3)
     less (2.2.2)
       commonjs (~> 0.2.6)
-    libv8 (3.3.10.4)
     libwebsocket (0.1.7.1)
       addressable
       websocket
@@ -241,6 +240,7 @@ GEM
     rack-test (0.6.2)
       rack (>= 1.0)
     rake (10.0.2)
+    ref (1.0.2)
     rubyzip (0.9.9)
     selenium-webdriver (2.26.0)
       childprocess (>= 0.2.5)
@@ -266,8 +266,8 @@ GEM
       tilt (~> 1.1, != 1.3.0)
     sqlite3 (1.3.6)
     systemu (2.5.2)
-    therubyracer (0.10.2)
-      libv8 (~> 3.3.10)
+    therubyracer (0.11.0)
+      ref
     thin (1.5.0)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)

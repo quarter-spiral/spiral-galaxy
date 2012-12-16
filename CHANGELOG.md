@@ -1,3 +1,8 @@
+# 0.0.9
+
+* Fixes a bug that caused all games to be shown in top spot when logged out
+* Added "no games played yet" message
+
 # 0.0.8
 
 * Makes promotional random games appear next to each other when logged out

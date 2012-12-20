@@ -1,3 +1,7 @@
+# 0.0.11 WIP
+
+* Adds Newrelic monitoring and ping middleware
+
 # 0.0.10
 
 * Fixes bug to run on Heroku

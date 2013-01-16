@@ -28,17 +28,13 @@ module Spiral::Galaxy
       secret = connection.devcenter.get_game(token, game)['secret']
       player = logged_in_player(request)
 
-      if player
-        body = ViewModel.new(canvas_url(game, player), sign_player_info(player, secret)).render(template)
+      body = ViewModel.new(canvas_url(game), sign_player_info(player, secret)).render(template)
 
-        [200, {'Content-Type' => 'text/html'}, [body]]
-      else
-        redirect_to '/'
-      end
+      [200, {'Content-Type' => 'text/html'}, [body]]
     end
 
     protected
-    def canvas_url(game, player)
+    def canvas_url(game)
       File.join(ENV['QS_CANVAS_APP_URL'], 'v1/games', game, "spiral-galaxy")
     end
 
@@ -51,11 +47,17 @@ module Spiral::Galaxy
 
     def sign_player_info(player, secret)
       player_info = {
-        'algorithm' => 'HMAC-SHA256',
-        'oauth_token' => player['token'],
-        'uuid' => player['uuid'],
-        'name' => player['name']
+        'algorithm' => 'HMAC-SHA256'
       }
+
+      if player
+        player_info.merge!(
+          'oauth_token' => player['token'],
+          'uuid' => player['uuid'],
+          'name' => player['name']
+        )
+      end
+
       player_info = JSON.dump(player_info)
       player_info = Base64.urlsafe_encode64(player_info)
 

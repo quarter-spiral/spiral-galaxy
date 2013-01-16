@@ -1,3 +1,7 @@
+# 0.0.12 WIP
+
+* Makes playing games possible when not logged in
+
 # 0.0.11
 
 * Adds Newrelic monitoring and ping middleware

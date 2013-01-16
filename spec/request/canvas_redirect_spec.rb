@@ -93,7 +93,7 @@ describe CanvasRedirect do
     Capybara.use_default_driver
   end
 
-  it "redirects testo the canvas-app with the uuid set" do
+  it "redirects to the canvas-app with the uuid set" do
     secret = @game.secret
     login(@player['uuid'], @player['name'])
 
@@ -108,8 +108,16 @@ describe CanvasRedirect do
     result['oauth_token'].wont_be_nil
   end
 
-  it "redirects to the spiral-galaxy index if not logged in" do
+  it "redirects to the canvas-app if not logged in" do
     visit "/play/#{@game.uuid}"
-    page.current_path.gsub(/#.*$/, '').must_equal "/"
+    page.has_no_selector?('form').must_equal true
+
+    secret = @game.secret
+    signed_request = page.evaluate_script('document.getElementsByTagName("html")[0].innerText')
+    result = parse_signed_request(secret, signed_request)
+    result['algorithm'].wont_be_nil
+    result['uuid'].must_be_nil
+    result['name'].must_be_nil
+    result['oauth_token'].must_be_nil
   end
 end

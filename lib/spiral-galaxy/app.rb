@@ -35,7 +35,7 @@ module Spiral::Galaxy
     protected
     def auth_callback_handler
       Proc.new { |env|
-        response = Rack::Response.new('', 301, 'Location' => '/')
+        response = Rack::Response.new('', 301, 'Location' => env['omniauth.origin'] || '/')
         response.set_cookie('qs_authentication', value: JSON.dump(env['omniauth.auth']), path: '/')
 
         response

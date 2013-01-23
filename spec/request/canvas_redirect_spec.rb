@@ -100,6 +100,9 @@ describe CanvasRedirect do
     visit "/play/#{@game.uuid}"
 
     page.has_no_selector?('form').must_equal true
+    sleep 1
+    sleep 1
+    sleep 1
 
     signed_request = page.evaluate_script('document.getElementsByTagName("html")[0].innerText')
     result = parse_signed_request(secret, signed_request)

@@ -1,5 +1,6 @@
 # 0.0.13 WIP
 
+* Makes it possible to be redirected to a game directly after login
 * Adds a logout route in Angular to be called from external sources
 
 # 0.0.12

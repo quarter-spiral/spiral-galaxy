@@ -1,3 +1,7 @@
+# 0.0.13 WIP
+
+* Adds a logout route in Angular to be called from external sources
+
 # 0.0.12
 
 * Makes playing games possible when not logged in

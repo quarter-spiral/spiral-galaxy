@@ -9,5 +9,6 @@
   $routeProvider.when "/", templateUrl: "/partials/frontpage.html"
   $routeProvider.when "/profile", templateUrl: "/partials/profile.html"
   $routeProvider.when "/library", templateUrl: "/partials/library.html"
+  $routeProvider.when "/logout", templateUrl: "/partials/logout.html"
   $routeProvider.otherwise redirectTo: "/"
 ]

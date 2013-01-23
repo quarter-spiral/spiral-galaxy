@@ -27,3 +27,8 @@ retrievedGames = {}
       $scope.games.friends = games
 
 @GamesController.$inject = ["$scope", "games"]
+
+@LogoutController = ($scope, user) ->
+  $scope.logout = ->
+    user.logout()
+@LogoutController.$inject = ["$scope", "qs_commons_user"]

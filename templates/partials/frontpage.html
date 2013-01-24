@@ -114,7 +114,10 @@
         <div class="tab-content">
           <ul class="gamesList" >
             <li ng-repeat="game in games[type]">
-              <h3><a href="#">{{game.name}}</a></h3>
+              <h3>
+                <a href="/play/{{game.uuid}}" ng-hide="!(game.venues|include:'spiral-galaxy')">{{game.name}}</a>
+                <span ng-show="!(game.venues|include:'spiral-galaxy')">{{game.name}}</span>
+              </h3>
               <div class="media" style="background-image: url('{{game.promoImage}}');">
               </div>
               <div class="info">

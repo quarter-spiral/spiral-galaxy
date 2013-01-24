@@ -46,11 +46,18 @@ retrievedGames = {}
 
   $scope.playerFriends = {}
 
+  $scope.playerName = "unknown"
+
   games.anyPlayersGames($routeParams.uuid).then (games) ->
     $scope.games.played = games
 
   users.playerDetails($routeParams.uuid).then (data) ->
     $scope.playerDetails = data
+    if playerDetails.venues.spiral-galaxy
+      $scope.playerName = playerDetails.venues.spiral-galaxy.name
+    else if playerDetails.venues.facebook
+      $scope.playerName = playerDetails.venues.facebook.name
+
 
   users.playerFriends($routeParams.uuid).then (data) ->
     $scope.playerFriends = data

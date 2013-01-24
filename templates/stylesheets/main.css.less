@@ -188,27 +188,30 @@ hr {
 		padding-top:0px;
 		padding-bottom:2em;
 		border-bottom:1px dashed #CCC;
+		&:last-child {
+			border-bottom:0px;
+		}
 	}
 	h3 {
 		margin:0px 0px 0.5em 0px;
-		margin-left:@mediaWidth + 20px;
 		padding:0px;
-		font-size:1.4em;
+		font-size:1.2em;
 		line-height: 1.5em;
+		margin-right:@mediaWidth + 20px;
 	}
 	.description {
-		font-size:1.2em;
+		font-size:1.1em;
 		color:#666;
 	}
 	.media {
-		float:left;
+		float:right;
 		width:@mediaWidth;
 		height:@mediaHeight;
 		background-color:#EEE;
 		.background-size(cover);
 	}
 	.info {
-		margin-left:@mediaWidth + 20px;
+		margin-right:@mediaWidth + 20px;
 	}
 	.meta {
 		margin:0.8em 0 1.8em 0;

@@ -48,8 +48,7 @@
               <li class="dropdown" ng-show="loggedIn">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user icon-white"></i> {{currentUser.name}} <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                  <li><a href="#/profile">Public Profile</a></li>
-                  <li><a href="#/library">Game Library</a></li>
+                  <li><a href="#/profile/{{currentUser.uuid}}">Public Profile</a></li>
                   <li class="divider"></li>
                   <li class="nav-header">Quarter Spiral ID</li>
                   <li><a href="<%= File.join(ENV['QS_AUTH_BACKEND_URL'], '/profile') %>">Your Account</a></li>

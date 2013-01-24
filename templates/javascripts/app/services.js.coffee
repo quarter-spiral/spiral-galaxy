@@ -46,5 +46,17 @@ services.factory "games", ["$rootScope", "$cookies", "qs_commons_user", "qs_comm
             games.push game
           games
       )
+
+    anyPlayersGames: (playerUUID) ->
+      http.makeRequest(
+        method: 'GET',
+        url: "#{playercenterUrl}/v1/#{playerUUID}/games?venue=spiral-galaxy"
+        returns: (data) ->
+          games = []
+          for game in data.games
+            game.promoImage = (game.screenshots[0] || {}).url
+            games.push game
+          games
+      )
   }
 ]

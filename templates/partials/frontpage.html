@@ -123,12 +123,11 @@
         <div class="tab-content">
           <ul class="gamesList" >
             <li ng-repeat="game in games[type]">
+              <div class="media" style="background-image: url('{{game.promoImage}}');"></div>
               <h3>
                 <a href="/play/{{game.uuid}}" ng-hide="!(game.venues|include:'spiral-galaxy')">{{game.name}}</a>
                 <span ng-show="!(game.venues|include:'spiral-galaxy')">{{game.name}}</span>
               </h3>
-              <div class="media" style="background-image: url('{{game.promoImage}}');">
-              </div>
               <div class="info">
 
                 <div class="description">
@@ -143,9 +142,7 @@
                 </div>
                 <div class="playShare">
                   <a class="btn btn-success" href="/play/{{game.uuid}}" ng-hide="!(game.venues|include:'spiral-galaxy')"><strong>Play Now</strong></a>
-                  <a class="btn" href="#share" role="button" class="" data-toggle="modal"><i class="icon-share"></i> <strong>Share</strong> / Embed</a>
-                  <a class="btn"><i class="icon-star-empty"></i></a>
-
+                  <a class="btn btn-small" href="#share" role="button" class="" data-toggle="modal"><i class="icon-share"></i> <strong>Share</strong> / Embed</a>
                 </div>
 
               </div>

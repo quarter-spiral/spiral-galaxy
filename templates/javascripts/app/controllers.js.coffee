@@ -6,6 +6,7 @@
 @FrontpageController.$inject = ['$scope', '$location', 'qs_commons_user']
 
 retrievedGames = {}
+
 @GamesController = ($scope, games) ->
   $scope.envs = window.qs.ENV
 
@@ -32,3 +33,16 @@ retrievedGames = {}
   $scope.logout = ->
     user.logout()
 @LogoutController.$inject = ["$scope", "qs_commons_user"]
+
+
+@ProfileController = ($scope, games, $routeParams) ->
+  $scope.envs = window.qs.ENV
+
+  $scope.games = {
+    played: []
+  }
+
+  games.anyPlayersGames($routeParams.uuid).then (games) ->
+    $scope.games.played = games
+
+@ProfileController.$inject = ["$scope", "games", "$routeParams"]

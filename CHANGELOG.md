@@ -1,3 +1,9 @@
+# 0.0.14
+
+* Removes remaining UI stubs (like profile text, etc)
+* Adds permanent profile urls for all users
+* Hides info and game lists when n/a rather than showing empty
+
 # 0.0.13
 
 * Makes it possible to be redirected to a game directly after login

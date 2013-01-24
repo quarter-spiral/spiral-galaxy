@@ -2,7 +2,9 @@
   <div class="span10 offset2" >
     <h1>{{playerName}}</h1>
     <p>
-      <span class="label" ng-repeat="venue in playerDetails.venues">{{venue}}+</span>
+      <span class="label" ng-repeat="(venue, data) in playerDetails.venue">
+        {{venue}}
+      </span> 
     </p>
   </div>
 </div>  

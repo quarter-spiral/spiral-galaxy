@@ -1,3 +1,7 @@
+# 0.0.15
+
+* Fixes Bug where a players name on the profile is not displayed
+
 # 0.0.14
 
 * Removes remaining UI stubs (like profile text, etc)

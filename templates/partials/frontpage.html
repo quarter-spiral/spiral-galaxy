@@ -20,7 +20,10 @@
           <div class="item" ng-class="{active: $first}" ng-repeat="game in games.all | limitTo:3">
             <div class="feature large" style="background-image: url('{{game.promoImage}}');">
               <div class="banner">
-                <div class="title">{{game.name}}</div>
+                <div class="title">
+                  <a href="/play/{{game.uuid}}" ng-hide="!(game.venues|include:'spiral-galaxy')">{{game.name}}</a>
+                  <span ng-show="!(game.venues|include:'spiral-galaxy')">{{game.name}}</span>
+                </div>
                 <div class="info">Yesterday</div>
               </div>
             </div>
@@ -40,7 +43,10 @@
           <div class="item" ng-class="{active: $first}" ng-repeat="game in games.friends | limitTo:3">
             <div class="feature large" style="background-image: url('{{game.promoImage}}');">
               <div class="banner">
-                <div class="title">{{game.name}}</div>
+                <div class="title">
+                  <a href="/play/{{game.uuid}}" ng-hide="!(game.venues|include:'spiral-galaxy')">{{game.name}}</a>
+                  <span ng-show="!(game.venues|include:'spiral-galaxy')">{{game.name}}</span>
+                </div>
                 <div class="info">Yesterday</div>
               </div>
             </div>
@@ -63,7 +69,10 @@
 
           <div class="feature" style="background-image: url('{{game.promoImage}}');">
             <div class="banner">
-              <div class="title">{{game.name}}</div>
+              <div class="title">
+                <a href="/play/{{game.uuid}}" ng-hide="!(game.venues|include:'spiral-galaxy')">{{game.name}}</a>
+                <span ng-show="!(game.venues|include:'spiral-galaxy')">{{game.name}}</span>
+              </div>
             </div>
           </div>
         </div>

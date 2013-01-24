@@ -60,3 +60,30 @@ services.factory "games", ["$rootScope", "$cookies", "qs_commons_user", "qs_comm
       )
   }
 ]
+
+
+
+services.factory "users", ["$rootScope", "$cookies", "qs_commons_user", "qs_commons_http", (rootScope, cookies, user, http) ->
+  http.setUserService user
+
+  {
+    playerDetails: (playerUUID) ->
+      http.makeRequest(
+        method: 'GET',
+        url: "#{playercenterUrl}/v1/#{playerUUID}"
+        returns: (data) ->
+          playerDetails = data
+          playerDetails
+      )
+
+    playerFriends: (playerUUID) ->
+      http.makeRequest(
+        method: 'GET',
+        url: "#{playercenterUrl}/v1/#{playerUUID}/friends"
+        returns: (data) ->
+          playerFriends = data
+          playerFriends
+      )
+
+  }
+]

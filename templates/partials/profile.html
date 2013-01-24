@@ -1,6 +1,9 @@
-<div class="row" id="profileHeader">
+<div class="row" id="profileHeader" ng-controller="ProfileController">
   <div class="span10 offset2" >
-    <h1>{{currentUser.name}}</h1>
+    <h1>{{playerDetails.venues.spiral-galaxy.name}}</h1>
+    <p>
+      <span class="label" ng-repeat="venue in playerDetails.venues">{{venue}}+</span>
+    </p>
   </div>
 </div>  
 <div class="row">

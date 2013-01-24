@@ -35,14 +35,24 @@ retrievedGames = {}
 @LogoutController.$inject = ["$scope", "qs_commons_user"]
 
 
-@ProfileController = ($scope, games, $routeParams) ->
+@ProfileController = ($scope, games, users, $routeParams) ->
   $scope.envs = window.qs.ENV
 
   $scope.games = {
     played: []
   }
 
+  $scope.playerDetails = {}
+
+  $scope.playerFriends = {}
+
   games.anyPlayersGames($routeParams.uuid).then (games) ->
     $scope.games.played = games
 
-@ProfileController.$inject = ["$scope", "games", "$routeParams"]
+  users.playerDetails($routeParams.uuid).then (data) ->
+    $scope.playerDetails = data
+
+  users.playerFriends($routeParams.uuid).then (data) ->
+    $scope.playerFriends = data
+
+@ProfileController.$inject = ["$scope", "games", "users", "$routeParams"]

@@ -1,3 +1,7 @@
+# 0.0.16 WIP
+
+* Fixes typo in controller code
+
 # 0.0.15
 
 * Fixes Bug where a players name on the profile is not displayed

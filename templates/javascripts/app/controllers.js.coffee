@@ -53,14 +53,13 @@ retrievedGames = {}
 
   users.playerDetails($routeParams.uuid).then (data) ->
     $scope.playerDetails = data
-    if $scope.playerDetails.venue['spiral-galaxy']
-      $scope.playerName = $scope.playerDetails.venue['spiral-galaxy'].name
-    else if $scope.playerDetails.venue['facebook']
-      $scope.playerName = $scope.playerDetails.venue['facebook'].name
+
+    if $scope.playerDetails.venues['spiral-galaxy']
+      $scope.playerName = $scope.playerDetails.venues['spiral-galaxy'].name
+    else if $scope.playerDetails.venues['facebook']
+      $scope.playerName = $scope.playerDetails.venues['facebook'].name
 
   users.playerFriends($routeParams.uuid).then (data) ->
     $scope.playerFriends = data
-
-  
 
 @ProfileController.$inject = ["$scope", "games", "users", "$routeParams"]

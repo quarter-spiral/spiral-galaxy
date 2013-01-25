@@ -122,27 +122,34 @@
           <ul class="gamesList" >
             <li ng-repeat="game in games[type]">
               <div class="media" style="background-image: url('{{game.promoImage}}');"></div>
-              <h3>
-                <a href="/play/{{game.uuid}}" ng-hide="!(game.venues|include:'spiral-galaxy')">{{game.name}}</a>
-                <span ng-show="!(game.venues|include:'spiral-galaxy')">{{game.name}}</span>
-              </h3>
+              
               <div class="info">
+                <h3>
+                  <a href="/play/{{game.uuid}}" ng-hide="!(game.venues|include:'spiral-galaxy')">{{game.name}}</a>
+                  <span ng-show="!(game.venues|include:'spiral-galaxy')">{{game.name}}</span>
+                </h3>
+                <div class="meta">
+                  <p> 
+                    <span ng-repeat="venue in game.venues">
+                      <a href="{{envs.QS_CANVAS_APP_URL}}/v1/games/{{game.uuid}}/{{venue}}">{{venue | humanize}}</a>
+                    </span>
+                  </p>
+                </div>
 
                 <div class="description">
                   <p>{{game.description}}</p>
                 </div>
-                <div class="meta">
-                  <p>
-                    <span ng-repeat="venue in game.venues">
-                      <a href="{{envs.QS_CANVAS_APP_URL}}/v1/games/{{game.uuid}}/{{venue}}" class="label">{{venue | humanize}}</a>
-                    </span>
-                  </p>
+                
+                <div class="embed" ng-init="showEmbed = false;" ng-show="showEmbed">
+                  <h4>Paste this code into your site to mebed this game.</h4>
+                  <div class="code">
+                    {{game.embed}}
+                  </div>
                 </div>
                 <div class="playShare">
                   <a class="btn btn-success" href="/play/{{game.uuid}}" ng-hide="!(game.venues|include:'spiral-galaxy')"><strong>Play Now</strong></a>
-                  <a class="btn btn-small" href="#share" role="button" class="" data-toggle="modal"><i class="icon-share"></i> <strong>Share</strong> / Embed</a>
+                  <a ng-show="game.embed" ng-click="showEmbed = toggle(showEmbed);"><i class="icon-share"></i> Embed</a>
                 </div>
-
               </div>
             </li>
           </ul>
@@ -174,62 +181,4 @@
   </div>
   -->
 
-</div>
-
-
-
-
-
-<!-- Modal -->
-<div id="share" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">Share...</h3>
-  </div>
-  <div class="modal-body">
-    <p>
-      You can easily share any game powered by Quarter Spiral. Here is all you need.
-    </p>
-    <p>
-      <label><strong>Link to this game</strong></label>
-      <div class="input-append">
-        <input class="span3" value="http://shortPermaUrl" type="text">
-        <button class="btn">Copy to clipboard</button>
-      </div>
-    </p>
-    <p>
-      <label><strong>Embed this game anywhere. Just copy and paste to code below</strong></label>
-      <textarea rows="3" class="span4">gobble di gob. JS code and stuff of awesome</textarea>
-    </p>
-    <p>
-      <lable><strong>Share with the usual suspects</strong></lanel>
-      <ul id="social" class="cf">
-        <li>
-            <a href="http://twitter.com/share" class="socialite twitter-share" data-text="[game]" data-url="http://quarterspiral.com" data-count="vertical" rel="nofollow" target="_blank">
-                <span class="vhidden">Share on Twitter</span>
-            </a>
-        </li>
-        <li>
-            <a href="https://plusone.google.com/_/+1/confirm?hl=en&amp;url=http://quarterspiral.com" class="socialite googleplus-one" data-size="tall" data-href="http://quarterspiral.com" rel="nofollow" target="_blank">
-                <span class="vhidden">Share on Google+</span>
-            </a>
-        </li>
-        <li>
-            <a href="http://www.facebook.com/sharer.php?u=http://quarterspiral.com&amp;t=Quarterspiral" class="socialite facebook-like" data-href="http://quarterspiral.com" data-send="false" data-layout="box_count" data-width="60" data-show-faces="false" rel="nofollow" target="_blank">
-                <span class="vhidden">Share on Facebook</span>
-            </a>
-        </li>
-        <li>
-            <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://quarterspiral.com&amp;title=quarterspiral.com" class="socialite linkedin-share" data-url="http://quarterspiral.com" data-counter="top" rel="nofollow" target="_blank">
-                <span class="vhidden">Share on LinkedIn</span>
-            </a>
-        </li>
-      </ul>
-    </p>
-
-  </div>
-  <div class="modal-footer">
-    <a  class="btn btn-success"><strong>Play Now</strong></a>
-    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-  </div>
 </div>

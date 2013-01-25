@@ -17,6 +17,12 @@ retrievedGames = {}
     all: []
   }
 
+  $scope.toggle = (value) ->
+    if value is true
+      false
+    else
+      true
+
   games.allGames().then (games) ->
     $scope.games.all = games
 
@@ -41,6 +47,12 @@ retrievedGames = {}
   $scope.games = {
     played: []
   }
+
+  $scope.toggle = (value) ->
+    if value is true
+      false
+    else
+      true
 
   $scope.playerDetails = {}
 

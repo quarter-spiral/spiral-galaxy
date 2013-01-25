@@ -1,3 +1,7 @@
+# 0.0.17
+
+* Makes embed codes available from the games list
+
 # 0.0.16
 
 * Fixes typo in controller code

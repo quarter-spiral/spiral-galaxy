@@ -1,3 +1,7 @@
+# 0.0.18 WIP
+
+* Removes http basic auth protection on production
+
 # 0.0.17
 
 * Makes embed codes available from the games list

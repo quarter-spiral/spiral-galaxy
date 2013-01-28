@@ -1,4 +1,4 @@
-# 0.0.18 WIP
+# 0.0.18
 
 * Removes http basic auth protection on production
 

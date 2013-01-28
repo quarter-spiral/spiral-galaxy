@@ -29,4 +29,11 @@ end
 use NewRelicMiddleware
 use Ping::Middleware
 
+# Password protection on production
+if ENV['RACK_ENV'] == 'production'
+  use Rack::Auth::Basic, "Sample Dev App" do |username, password|
+      'redwoodpho' == password
+  end
+end
+
 run Spiral::Galaxy::App.new

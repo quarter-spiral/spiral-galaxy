@@ -1,3 +1,7 @@
+# 0.0.19 WIP
+
+* Reverts password protection
+
 # 0.0.18
 
 * Removes http basic auth protection on production

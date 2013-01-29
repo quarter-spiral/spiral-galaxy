@@ -1,6 +1,12 @@
 # Controllers
 
+betaWall = ($location, user) ->
+  ->
+    $location.path('/beta') unless user.currentUser()
+
+
 @FrontpageController = ($scope, $location, user) ->
+  $scope.redirectToBetaWall = betaWall($location, user)
   user.currentUser()
 
 @FrontpageController.$inject = ['$scope', '$location', 'qs_commons_user']
@@ -41,7 +47,8 @@ retrievedGames = {}
 @LogoutController.$inject = ["$scope", "qs_commons_user"]
 
 
-@ProfileController = ($scope, games, users, $routeParams) ->
+@ProfileController = ($scope, games, users, $routeParams, $location, user) ->
+  $scope.redirectToBetaWall = betaWall($location, user)
   $scope.envs = window.qs.ENV
 
   $scope.games = {
@@ -74,4 +81,4 @@ retrievedGames = {}
   users.playerFriends($routeParams.uuid).then (data) ->
     $scope.playerFriends = data
 
-@ProfileController.$inject = ["$scope", "games", "users", "$routeParams"]
+@ProfileController.$inject = ["$scope", "games", "users", "$routeParams", "$location", "qs_commons_user"]

@@ -1,13 +1,13 @@
-<div class="row" id="profileHeader" ng-controller="ProfileController">
+<div class="row" id="profileHeader" ng-controller="ProfileController" ng-init="redirectToBetaWall()">
   <div class="span10 offset2" >
     <h1>{{playerName}}</h1>
     <p>
       <span class="label" ng-repeat="(venue, data) in playerDetails.venue">
         {{venue}}
-      </span> 
+      </span>
     </p>
   </div>
-</div>  
+</div>
 <div class="row">
 
   <div class="span2">
@@ -43,14 +43,14 @@
       <ul class="gamesList">
         <li ng-repeat="game in games.played">
           <div class="media" style="background-image: url('{{game.promoImage}}');"></div>
-          
+
           <div class="info">
             <h3>
               <a href="/play/{{game.uuid}}" ng-hide="!(game.venues|include:'spiral-galaxy')">{{game.name}}</a>
               <span ng-show="!(game.venues|include:'spiral-galaxy')">{{game.name}}</span>
             </h3>
             <div class="meta">
-              <p> 
+              <p>
                 <span ng-repeat="venue in game.venues">
                   <a href="{{envs.QS_CANVAS_APP_URL}}/v1/games/{{game.uuid}}/{{venue}}">{{venue | humanize}}</a>
                 </span>
@@ -60,7 +60,7 @@
             <div class="description">
               <p>{{game.description}}</p>
             </div>
-            
+
             <div class="embed" ng-init="showEmbed = false;" ng-show="showEmbed">
               <h4>Paste this code into your site to mebed this game.</h4>
               <div class="code">

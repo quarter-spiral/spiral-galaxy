@@ -1,3 +1,8 @@
+# 0.0.20 WIP
+
+* Adds beta wall
+* Retires password protection
+
 # 0.0.19
 
 * Reverts password protection

@@ -70,7 +70,7 @@ services.factory "users", ["$rootScope", "$cookies", "qs_commons_user", "qs_comm
     playerDetails: (playerUUID) ->
       http.makeRequest(
         method: 'GET',
-        url: "#{playercenterUrl}/v1/#{playerUUID}"
+        url: "#{playercenterUrl}/v1/public/#{playerUUID}"
         returns: (data) ->
           playerDetails = data
           playerDetails

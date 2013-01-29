@@ -1,3 +1,7 @@
+# 0.0.21 WIP
+
+* Fixes player profiles for not logged in players
+
 # 0.0.20
 
 * Adds beta wall

@@ -1,4 +1,4 @@
-# 0.0.21 WIP
+# 0.0.21
 
 * Fixes player profiles for not logged in players
 

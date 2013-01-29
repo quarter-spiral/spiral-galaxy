@@ -1,3 +1,7 @@
+# 0.0.22 WIP
+
+* Fixes remaining bugs for player profiles when not logged in
+
 # 0.0.21
 
 * Fixes player profiles for not logged in players

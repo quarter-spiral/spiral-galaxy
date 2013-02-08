@@ -23,6 +23,22 @@ retrievedGames = {}
     all: []
   }
 
+  $scope.categories = games.categories
+
+  $scope.selectCategory = (category) ->
+    games.selectedCategory = category
+
+  $scope.selectedCategory = ->
+    games.selectedCategory
+
+  $scope.isCategorySelected = (category) ->
+    (!games.selectedCategory and !category) or (games.selectedCategory and category and games.selectedCategory.name == category.name)
+
+  $scope.gameFilter = ->
+    selectedCategory = $scope.selectedCategory()
+    return {} unless selectedCategory
+    {category: selectedCategory.name}
+
   $scope.toggle = (value) ->
     if value is true
       false

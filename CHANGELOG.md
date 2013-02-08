@@ -1,5 +1,6 @@
 # 0.0.22 WIP
 
+* Makes category filters real
 * Fixes remaining bugs for player profiles when not logged in
 
 # 0.0.21

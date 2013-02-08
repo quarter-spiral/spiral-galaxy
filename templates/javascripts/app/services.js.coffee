@@ -10,6 +10,8 @@ playercenterUrl = window.qs.ENV.QS_PLAYERCENTER_BACKEND_URL
 services.factory "games", ["$rootScope", "$cookies", "qs_commons_user", "qs_commons_http", (rootScope, cookies, user, http) ->
   http.setUserService user
 
+  categories = []
+
   {
     allGames: ->
       http.makeRequest(
@@ -17,11 +19,24 @@ services.factory "games", ["$rootScope", "$cookies", "qs_commons_user", "qs_comm
         url: "#{devcenterUrl}/v1/public/games"
         returns: (data) ->
           games = []
+
+          temporaryCategories = {}
+
           for game in data.games
+            temporaryCategories[game.category] ||= 0
+            temporaryCategories[game.category]++
+
             game.promoImage = (game.screenshots[0] || {}).url
             games.push game
+
+          categories.splice(0, categories.length)
+          for category, count of temporaryCategories
+            categories.push({name: category, count: count})
+
           games
       )
+
+    categories: categories
 
     myGames: ->
       http.makeRequest(

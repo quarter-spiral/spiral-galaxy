@@ -94,18 +94,10 @@
         </p>
       -->
 
-      <ul class="nav nav-list categories">
+      <ul class="nav nav-list categories" ng-controller="GamesController">
         <li class="nav-header">Categories</li>
-        <li class="active"><a href="#"><strong>All</strong> 2310</a></li>
-        <li><a href="#"><strong>MMO</strong> 231</a></li>
-        <li><a href="#"><strong>Adventure</strong> 321</a></li>
-        <li><a href="#"><strong>Action</strong> 124</a></li>
-        <li><a href="#"><strong>Arcade</strong> 98</a></li>
-        <li><a href="#"><strong>Shooting</strong> 56</a></li>
-        <li><a href="#"><strong>Puzzle</strong> 87</a></li>
-        <li><a href="#"><strong>Strategy</strong> 241</a></li>
-        <li><a href="#"><strong>Sport</strong> 12</a></li>
-        <li><a href="#"><strong>Other</strong> 74</a></li>
+        <li ng-class="{active: isCategorySelected(null)}"><a href="#" ng-click="selectCategory(null)" avoid-href><strong>All</strong> {{games.all.length}}</a></li>
+        <li ng-class="{active: isCategorySelected(category)}" ng-repeat="category in categories|orderBy:'count':true|limitTo:15"><a href="#" ng-click="selectCategory(category)" avoid-href><strong>{{category.name}}</strong> {{category.count}}</a></li>
       </ul>
     </div>
   </div>
@@ -120,7 +112,7 @@
         </ul>
         <div class="tab-content">
           <ul class="gamesList" >
-            <li ng-repeat="game in games[type]">
+            <li ng-repeat="game in games[type]|filter:gameFilter()">
               <div class="media" style="background-image: url('{{game.promoImage}}');"></div>
 
               <div class="info">

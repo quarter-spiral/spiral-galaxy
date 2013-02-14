@@ -5,24 +5,23 @@
 
     <div ng-hide="loggedIn" ng-controller="GamesController">
       <h2>Random Games</h2>
-      <div ng-repeat="game in games.all | limitTo:3" class="span4 feature large" style="background-image: url('{{game.promoImage}}');">
+      <div ng-repeat="game in games.all|enabledOnSpiralGalaxy|limitTo:3" class="span4 feature large" style="background-image: url('{{game.promoImage}}');">
         <div class="banner">
           <div class="title">{{game.name}}</div>
         </div>
       </div>
     </div>
 
-    <div ng-class="games.friends|empty|or:(games.recently|empty)|eitherOr:'span8':'span4'" ng-show="loggedIn" ng-controller="GamesController">
+    <div ng-class="games.friends|enabledOnSpiralGalaxy|empty|or:(games.recently|enabledOnSpiralGalaxy|empty)|eitherOr:'span8':'span4'" ng-show="loggedIn" ng-controller="GamesController">
       <h2>Random Games</h2>
       <div id="myCarousel" class="carousel slide">
         <!-- Carousel items -->
         <div class="carousel-inner">
-          <div class="item" ng-class="{active: $first}" ng-repeat="game in games.all | limitTo:3">
+          <div class="item" ng-class="{active: $first}" ng-repeat="game in games.all|enabledOnSpiralGalaxy|limitTo:3">
             <div class="feature large" style="background-image: url('{{game.promoImage}}');">
               <div class="banner">
                 <div class="title">
-                  <a href="/play/{{game.uuid}}" ng-hide="!(game.venues|include:'spiral-galaxy')">{{game.name}}</a>
-                  <span ng-show="!(game.venues|include:'spiral-galaxy')">{{game.name}}</span>
+                  <a href="/play/{{game.uuid}}">{{game.name}}</a>
                 </div>
               </div>
             </div>
@@ -34,17 +33,16 @@
       </div>
     </div>
 
-    <div class="span4" ng-controller="GamesController" ng-show="loggedIn && (!(games.friends|empty))">
+    <div class="span4" ng-controller="GamesController" ng-show="loggedIn && (!(games.friends|enabledOnSpiralGalaxy|empty))">
       <h2>Featured Friends Play</h2>
       <div id="myCarousel2" class="carousel slide">
         <!-- Carousel items -->
         <div class="carousel-inner">
-          <div class="item" ng-class="{active: $first}" ng-repeat="game in games.friends | limitTo:3">
+          <div class="item" ng-class="{active: $first}" ng-repeat="game in games.friends|enabledOnSpiralGalaxy|limitTo:3">
             <div class="feature large" style="background-image: url('{{game.promoImage}}');">
               <div class="banner">
                 <div class="title">
-                  <a href="/play/{{game.uuid}}" ng-hide="!(game.venues|include:'spiral-galaxy')">{{game.name}}</a>
-                  <span ng-show="!(game.venues|include:'spiral-galaxy')">{{game.name}}</span>
+                  <a href="/play/{{game.uuid}}">{{game.name}}</a>
                 </div>
               </div>
             </div>
@@ -56,20 +54,19 @@
       </div>
     </div>
 
-    <div class="span4" ng-show="loggedIn && ((!(games.recently|empty))|or:(games.friends|empty))" ng-controller="GamesController">
+    <div class="span4" ng-show="loggedIn && ((!(games.recently|enabledOnSpiralGalaxy|empty))|or:(games.friends|enabledOnSpiralGalaxy|empty))" ng-controller="GamesController">
       <h2>Play it again</h2>
 
       <div class="row">
-        <div class="span4 notPlayedYet" ng-show="games.recently | empty">
+        <div class="span4 notPlayedYet" ng-show="games.recently|enabledOnSpiralGalaxy|empty">
           <p>You have not played any games yet.</p>
         </div>
-        <div class="span2" ng-repeat="game in games.recently | limitTo:4" ng-hide="games.recently | empty">
+        <div class="span2" ng-repeat="game in games.recently|enabledOnSpiralGalaxy|limitTo:4" ng-hide="games.recently|enabledOnSpiralGalaxy|empty">
 
           <div class="feature" style="background-image: url('{{game.promoImage}}');">
             <div class="banner">
               <div class="title">
-                <a href="/play/{{game.uuid}}" ng-hide="!(game.venues|include:'spiral-galaxy')">{{game.name}}</a>
-                <span ng-show="!(game.venues|include:'spiral-galaxy')">{{game.name}}</span>
+                <a href="/play/{{game.uuid}}">{{game.name}}</a>
               </div>
             </div>
           </div>
@@ -96,7 +93,7 @@
 
       <ul class="nav nav-list categories" ng-controller="GamesController">
         <li class="nav-header">Categories</li>
-        <li ng-class="{active: isCategorySelected(null)}"><a href="#" ng-click="selectCategory(null)" avoid-href><strong>All</strong> {{games.all.length}}</a></li>
+        <li ng-class="{active: isCategorySelected(null)}"><a href="#" ng-click="selectCategory(null)" avoid-href><strong>All</strong> {{(games.all|enabledOnSpiralGalaxy).length}}</a></li>
         <li ng-class="{active: isCategorySelected(category)}" ng-repeat="category in categories|orderBy:'count':true|limitTo:15"><a href="#" ng-click="selectCategory(category)" avoid-href><strong>{{category.name}}</strong> {{category.count}}</a></li>
       </ul>
     </div>
@@ -108,19 +105,24 @@
       <div class="tabbable"> <!-- Only required for left/right tabs -->
         <ul class="nav nav-tabs" ng-init="type = 'all'">
           <li ng-class="{active: type == 'all'}"><a ng-click="type = 'all'">All</a></li>
-          <li ng-hide="!loggedIn || (games.friends|empty)" ng-class="{active: type == 'friends'}"><a ng-click="type = 'friends'">Played by Friends</a></li>
+          <li ng-hide="!loggedIn || (games.friends|enabledOnSpiralGalaxy|empty)" ng-class="{active: type == 'friends'}"><a ng-click="type = 'friends'">Played by Friends</a></li>
         </ul>
         <div class="tab-content">
           <ul class="gamesList" >
-            <li ng-repeat="game in games[type]|filter:gameFilter()">
+            <li ng-repeat="game in games[type]|filter:gameFilter()|enabledOnSpiralGalaxy">
               <div class="media" style="background-image: url('{{game.promoImage}}');"></div>
 
               <div class="info">
                 <h3>
-                  <a href="/play/{{game.uuid}}" ng-hide="!(game.venues|include:'spiral-galaxy')">{{game.name}}</a>
-                  <span ng-show="!(game.venues|include:'spiral-galaxy')">{{game.name}}</span>
+                  <a href="/play/{{game.uuid}}">{{game.name}}</a>
                 </h3>
                 <div class="meta">
+                  <p ng-show="game.credits && !game.credits_url">
+                    by {{game.credits}}
+                  </p>
+                  <p ng-show="game.credits && game.credits_url">
+                    by <a href="{{game.credits_url}}">{{game.credits}}</a>
+                  </p>
                   <p>
                     <span ng-repeat="venue in game.venues">
                       <a href="{{envs.QS_CANVAS_APP_URL}}/v1/games/{{game.uuid}}/{{venue}}">{{venue | humanize}}</a>
@@ -139,7 +141,7 @@
                   </div>
                 </div>
                 <div class="playShare">
-                  <a class="btn btn-success" href="/play/{{game.uuid}}" ng-hide="!(game.venues|include:'spiral-galaxy')"><strong>Play Now</strong></a>
+                  <a class="btn btn-success" href="/play/{{game.uuid}}"><strong>Play Now</strong></a>
                   <a ng-show="game.embed" ng-click="showEmbed = toggle(showEmbed);"><i class="icon-share"></i> Embed</a>
                 </div>
               </div>

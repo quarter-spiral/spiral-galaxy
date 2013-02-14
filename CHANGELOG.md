@@ -1,3 +1,8 @@
+# 0.0.23 WIP
+
+* Adds credits
+* Removes games from SG that are not enabled for SG
+
 # 0.0.22
 
 * Makes category filters real

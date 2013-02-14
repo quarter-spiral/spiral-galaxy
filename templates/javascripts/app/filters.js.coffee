@@ -15,4 +15,10 @@
 ).filter('or', ->
   (thiz, that) ->
     thiz or that
+).filter('enabledOnSpiralGalaxy', ->
+  (games) ->
+    gamesEnabledOnSpiralGalaxy = []
+    for game in games
+      gamesEnabledOnSpiralGalaxy.push(game) if game.venues.indexOf('spiral-galaxy') isnt -1
+    gamesEnabledOnSpiralGalaxy
 )

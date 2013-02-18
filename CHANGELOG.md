@@ -1,3 +1,7 @@
+# 0.0.24 WIP
+
+* tweaked credit line presentation
+
 # 0.0.23
 
 * Adds credits

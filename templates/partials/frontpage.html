@@ -117,15 +117,16 @@
                   <a href="/play/{{game.uuid}}">{{game.name}}</a>
                 </h3>
                 <div class="meta">
-                  <p ng-show="game.credits && !game.credits_url">
-                    by {{game.credits}}
-                  </p>
-                  <p ng-show="game.credits && game.credits_url">
-                    by <a href="{{game.credits_url}}">{{game.credits}}</a>
-                  </p>
-                  <p>
+                   <p>
+                    <span ng-show="game.credits && !game.credits_url">
+                      by {{game.credits}}, 
+                    </span>
+                    <span ng-show="game.credits && game.credits_url">
+                      by <a href="{{game.credits_url}}">{{game.credits}}</a>, 
+                    </span>
+                    available on:
                     <span ng-repeat="venue in game.venues">
-                      <a href="{{envs.QS_CANVAS_APP_URL}}/v1/games/{{game.uuid}}/{{venue}}">{{venue | humanize}}</a>
+                      <a href="{{envs.QS_CANVAS_APP_URL}}/v1/games/{{game.uuid}}/{{venue}}">{{venue | humanize}}</a><span ng-hide="$last">, </span>
                     </span>
                   </p>
                 </div>

@@ -103,7 +103,7 @@
   <div class="span10" ng-controller="GamesController">
     <div class="box" >
       <div class="tabbable"> <!-- Only required for left/right tabs -->
-        <ul class="nav nav-tabs" ng-init="type = 'all'">
+        <ul class="nav nav-pills" ng-init="type = 'all'">
           <li ng-class="{active: type == 'all'}"><a ng-click="type = 'all'">All</a></li>
           <li ng-hide="!loggedIn || (games.friends|enabledOnSpiralGalaxy|empty)" ng-class="{active: type == 'friends'}"><a ng-click="type = 'friends'">Played by Friends</a></li>
         </ul>

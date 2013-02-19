@@ -1,6 +1,8 @@
+//@import "mixins";
+
 body {
-	background-color:#EEE;
-	background: url("/images/use-your-illusion.png") repeat top left;
+	background-color:#FFF;
+	//background: url("/images/use-your-illusion.png") repeat top left;
 }
 
 
@@ -14,12 +16,44 @@ body {
 }
 
 
+.hero-unit {
+  &.stars {
+    background:#000 url('../images/stars.jpg') no-repeat  right bottom;
+    color:#FFF;
+    .text-shadow(0px 1px 3px rgba(0,0,0,1));
+    .box-shadow(0px 1px 2px rgba(0,0,0,0.8));
+    p, a {
+      color:#FF6;
+    }
+    a {
+      text-decoration: underline;
+      font-weight: bold;
+    }
+  }
+}
+
+
+
+.large {
+  font-size: 1.2em;
+  line-height: 1.5em;
+}
+
+.alpha {
+  font-size: 1.2em;
+  line-height: 1.5em;
+  text-align: right;
+  color:#999;
+}
+
+
+
 .box {
-	padding:20px 20px 20px 20px;
+	//padding:20px 20px 20px 20px;
 	background-color:rgba(255,255,255,1);
 	margin-bottom:30px;
-	.border-radius(5px);
-	.box-shadow(0px 2px 5px rgba(0,0,0,0.2));
+	
+	//.box-shadow(0px 0px 3px rgba(0,0,0,0.2));
 	h2 {
 		font-size: 1em;
 		margin:0px 0px 1em 0px;
@@ -182,12 +216,13 @@ hr {
 	list-style: none;
 	margin:0px;
 	padding:0px;
+	border:1px solid #DDD;
+	.border-radius(2px);
 	li {
 		min-height: @mediaHeight + 20px;
-		margin:0px 0px 20px 0px;
-		padding-top:0px;
-		padding-bottom:2em;
-		border-bottom:1px dashed #CCC;
+		margin:0px 0px 0px 0px;
+		padding:20px 20px 20px 20px;
+		border-bottom:1px solid #DDD;
 		&:last-child {
 			border-bottom:0px;
 		}
@@ -278,6 +313,13 @@ hr {
   -webkit-box-shadow: @shadow;
      -moz-box-shadow: @shadow;
           box-shadow: @shadow;
+}
+
+// Drop shadows
+.text-shadow(@shadow) {
+  -webkit-text-shadow: @shadow;
+     -moz-text-shadow: @shadow;
+          text-shadow: @shadow;
 }
 
 // Background sizing

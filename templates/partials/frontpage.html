@@ -78,7 +78,16 @@
 </div>
 
 <!-- main game explorer (3 columns) -->
-<div class="row">
+<div class="row" ng-controller="GamesController">
+
+  <div class="span10 offset2">
+
+    <ul class="nav nav-pills" ng-init="type = 'all'">
+      <li ng-class="{active: type == 'all'}"><a ng-click="type = 'all'">All</a></li>
+      <li ng-hide="!loggedIn || (games.friends|enabledOnSpiralGalaxy|empty)" ng-class="{active: type == 'friends'}"><a ng-click="type = 'friends'">Played by Friends</a></li>
+    </ul>
+
+  </div>
 
   <div class="span2">
 
@@ -91,7 +100,7 @@
         </p>
       -->
 
-      <ul class="nav nav-list categories" ng-controller="GamesController">
+      <ul class="nav nav-list categories" >
         <li class="nav-header">Categories</li>
         <li ng-class="{active: isCategorySelected(null)}"><a href="#" ng-click="selectCategory(null)" avoid-href><strong>All</strong> {{(games.all|enabledOnSpiralGalaxy).length}}</a></li>
         <li ng-class="{active: isCategorySelected(category)}" ng-repeat="category in categories|orderBy:'count':true|limitTo:15"><a href="#" ng-click="selectCategory(category)" avoid-href><strong>{{category.name}}</strong> {{category.count}}</a></li>
@@ -100,55 +109,49 @@
   </div>
 
 
-  <div class="span10" ng-controller="GamesController">
+  <div class="span10">
     <div class="box" >
-      <div class="tabbable"> <!-- Only required for left/right tabs -->
-        <ul class="nav nav-pills" ng-init="type = 'all'">
-          <li ng-class="{active: type == 'all'}"><a ng-click="type = 'all'">All</a></li>
-          <li ng-hide="!loggedIn || (games.friends|enabledOnSpiralGalaxy|empty)" ng-class="{active: type == 'friends'}"><a ng-click="type = 'friends'">Played by Friends</a></li>
-        </ul>
-        <div class="tab-content">
-          <ul class="gamesList" >
-            <li ng-repeat="game in games[type]|filter:gameFilter()|enabledOnSpiralGalaxy">
-              <div class="media" style="background-image: url('{{game.promoImage}}');"></div>
+      <div class="tab-content">
+        <ul class="gamesList" >
+          <li ng-repeat="game in games[type]|filter:gameFilter()|enabledOnSpiralGalaxy">
+            <div class="media" style="background-image: url('{{game.promoImage}}');"></div>
 
-              <div class="info">
-                <h3>
-                  <a href="/play/{{game.uuid}}">{{game.name}}</a>
-                </h3>
-                <div class="meta">
-                   <p>
-                    <span ng-show="game.credits && !game.credits_url">
-                      by {{game.credits}}, 
-                    </span>
-                    <span ng-show="game.credits && game.credits_url">
-                      by <a href="{{game.credits_url}}">{{game.credits}}</a>, 
-                    </span>
-                    available on:
-                    <span ng-repeat="venue in game.venues">
-                      <a href="{{envs.QS_CANVAS_APP_URL}}/v1/games/{{game.uuid}}/{{venue}}">{{venue | humanize}}</a><span ng-hide="$last">, </span>
-                    </span>
-                  </p>
-                </div>
+            <div class="info">
+              <h3>
+                <a href="/play/{{game.uuid}}">{{game.name}}</a>
+              </h3>
+              <div class="meta">
+                 <p>
+                  <span ng-show="game.credits && !game.credits_url">
+                    by {{game.credits}}, 
+                  </span>
+                  <span ng-show="game.credits && game.credits_url">
+                    by <a href="{{game.credits_url}}">{{game.credits}}</a>, 
+                  </span>
+                  available on:
+                  <span ng-repeat="venue in game.venues">
+                    <a href="{{envs.QS_CANVAS_APP_URL}}/v1/games/{{game.uuid}}/{{venue}}">{{venue | humanize}}</a><span ng-hide="$last">, </span>
+                  </span>
+                </p>
+              </div>
 
-                <div class="description">
-                  <p>{{game.description}}</p>
-                </div>
+              <div class="description">
+                <p>{{game.description}}</p>
+              </div>
 
-                <div class="embed" ng-init="showEmbed = false;" ng-show="showEmbed">
-                  <h4>Paste this code into your site to mebed this game.</h4>
-                  <div class="code">
-                    {{game.embed}}
-                  </div>
-                </div>
-                <div class="playShare">
-                  <a class="btn btn-success" href="/play/{{game.uuid}}"><strong>Play Now</strong></a>
-                  <a ng-show="game.embed" ng-click="showEmbed = toggle(showEmbed);"><i class="icon-share"></i> Embed</a>
+              <div class="embed" ng-init="showEmbed = false;" ng-show="showEmbed">
+                <h4>Paste this code into your site to mebed this game.</h4>
+                <div class="code">
+                  {{game.embed}}
                 </div>
               </div>
-            </li>
-          </ul>
-        </div>
+              <div class="playShare">
+                <a class="btn btn-success" href="/play/{{game.uuid}}"><strong>Play Now</strong></a>
+                <a ng-show="game.embed" ng-click="showEmbed = toggle(showEmbed);"><i class="icon-share"></i> Embed</a>
+              </div>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   </div>

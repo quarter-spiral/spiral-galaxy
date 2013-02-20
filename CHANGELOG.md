@@ -1,3 +1,7 @@
+# 0.0.25 WIP
+
+* now with pretty beta wall
+
 # 0.0.24
 
 * tweaked credit line presentation

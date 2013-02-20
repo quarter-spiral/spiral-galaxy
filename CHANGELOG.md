@@ -1,4 +1,4 @@
-# 0.0.25 WIP
+# 0.0.25
 
 * now with pretty beta wall
 

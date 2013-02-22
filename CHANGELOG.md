@@ -1,4 +1,4 @@
-# 0.0.26 WIP
+# 0.0.26
 
 * Adds asset caching
 * Moves from Brochure to Sprockets

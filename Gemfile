@@ -6,10 +6,10 @@ gemspec
 gem 'json'
 
 group :development, :test do
-  gem 'auth-backend', '>= 0.0.17'
-  gem 'devcenter-backend', '>= 0.0.26'
-  gem 'datastore-backend', '>= 0.0.11'
-  gem 'graph-backend', '>= 0.0.14'
+  gem 'auth-backend', '>= 0.0.27'
+  gem 'devcenter-backend', '>= 0.0.43'
+  gem 'datastore-backend', '>= 0.0.15'
+  gem 'graph-backend', '>= 0.0.22'
 
   gem 'nokogiri'
   gem 'sqlite3'

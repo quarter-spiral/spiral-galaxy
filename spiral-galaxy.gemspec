@@ -17,17 +17,17 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
 
-  gem.add_dependency 'brochure'
-  gem.add_dependency 'therubyracer', '~> 0.10.2'
-  gem.add_dependency 'coffee-script'
   gem.add_dependency 'less'
   gem.add_dependency 'omniauth-oauth2'
 
-  gem.add_dependency 'angular-commons-middleware', '>= 0.0.3'
+  gem.add_dependency 'angular-commons-middleware', '>= 0.0.4'
   gem.add_dependency 'thin'
 
   gem.add_dependency 'devcenter-client', '>= 0.0.3'
   gem.add_dependency 'auth-client', '>= 0.0.14'
   gem.add_dependency 'newrelic_rpm'
   gem.add_dependency 'ping-middleware', '~> 0.0.2'
+  gem.add_dependency 'sprockets', '~> 2.0'
+  gem.add_dependency 'rack', '~> 1.4.5'
+  gem.add_dependency 'rack-cache', '~> 1.2'
 end

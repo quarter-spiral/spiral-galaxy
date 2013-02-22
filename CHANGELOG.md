@@ -1,3 +1,8 @@
+# 0.0.26 WIP
+
+* Adds asset caching
+* Moves from Brochure to Sprockets
+
 # 0.0.25
 
 * now with pretty beta wall

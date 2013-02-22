@@ -73,11 +73,7 @@ module Spiral::Galaxy
     end
 
     def template
-      @template ||= File.read(File.expand_path('../../../templates/play.html.erb', __FILE__))
-    end
-
-    def redirect_to(url)
-      [302, {'Content-Type' => 'text/plain', 'Location' => url}, ['']]
+      @template ||= File.read(File.expand_path('../../../assets/play.html.erb', __FILE__))
     end
 
     def connection
@@ -86,14 +82,6 @@ module Spiral::Galaxy
 
     def token
       TokenStore.token(connection)
-    end
-
-    def try_twice_and_avoid_token_expiration
-      yield
-    rescue Service::Client::ServiceError => e
-      raise e unless e.error == 'Unauthenticated'
-      TokenStore.reset!
-      yield
     end
   end
 end

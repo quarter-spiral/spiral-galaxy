@@ -1,3 +1,8 @@
+# 0.0.27 WIP
+
+* surepssing jumping of layout during loading using ng-cloak
+* showing loading message while games are loaded
+
 # 0.0.26
 
 * Adds asset caching

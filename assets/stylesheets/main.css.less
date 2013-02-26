@@ -81,6 +81,16 @@ body {
 		text-align:center;
 		font-weight:normal;
 	}
+	.loading {
+		height:2*@singleFeatureHeight+@featureMargin;
+		line-height: 2*@singleFeatureHeight+@featureMargin;
+		text-align: center;
+		font-size: 1.1em;
+		color:#666;
+		img {
+			margin-right: 5px;
+		}
+	}
 	.feature {
 		height:@singleFeatureHeight;
 		background-color:#333;
@@ -104,8 +114,9 @@ body {
 				height:20px;
 				line-height: 20px;
 				&.title {
-					color:#FFF;
-					font-weight:bold;
+					a {
+						color:#FFF;
+					}
 				}
 				&.info {
 					color:#999;
@@ -231,6 +242,10 @@ hr {
 		border-bottom:1px solid #DDD;
 		&:last-child {
 			border-bottom:0px;
+		}
+		&.loading {
+			line-height: @mediaHeight + 20px;
+			text-align: center;
 		}
 	}
 	h3 {

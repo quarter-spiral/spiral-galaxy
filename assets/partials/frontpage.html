@@ -1,24 +1,77 @@
 <!-- Promotional top bar -->
 
-<div id="promoBlock" ng-controller="FrontpageController" ng-init="redirectToBetaWall()">
-  <div class="row" >
+<div id="promoBlock" class="ng-cloak" ng-controller="FrontpageController" ng-init="redirectToBetaWall()">
+  
+  <div ng-controller="GamesController">
 
-    <div ng-hide="loggedIn" ng-controller="GamesController">
-      <h2>Random Games</h2>
-      <div ng-repeat="game in games.all|enabledOnSpiralGalaxy|limitTo:3" class="span4 feature large" style="background-image: url('{{game.promoImage}}');">
-        <div class="banner">
-          <div class="title">{{game.name}}</div>
-        </div>
+    <div class="row" >
+      <div class="span12 loading" ng-hide="games">
+        <img src="../images/spinner.gif" /> Loading Games ...
       </div>
     </div>
 
-    <div ng-class="games.friends|enabledOnSpiralGalaxy|empty|or:(games.recently|enabledOnSpiralGalaxy|empty)|eitherOr:'span8':'span4'" ng-show="loggedIn" ng-controller="GamesController">
-      <h2>Random Games</h2>
-      <div id="myCarousel" class="carousel slide">
-        <!-- Carousel items -->
-        <div class="carousel-inner">
-          <div class="item" ng-class="{active: $first}" ng-repeat="game in games.all|enabledOnSpiralGalaxy|limitTo:3">
-            <div class="feature large" style="background-image: url('{{game.promoImage}}');">
+    <div class="row" ng-show="games">
+      <div ng-hide="loggedIn">
+        <h2>Random Games</h2>
+        <div ng-repeat="game in games.all|enabledOnSpiralGalaxy|limitTo:3" class="span4 feature large" style="background-image: url('{{game.promoImage}}');">
+          <div class="banner">
+            <div class="title">{{game.name}}</div>
+          </div>
+        </div>
+      </div>
+
+      <div ng-class="games.friends|enabledOnSpiralGalaxy|empty|or:(games.recently|enabledOnSpiralGalaxy|empty)|eitherOr:'span8':'span4'" ng-show="loggedIn">
+        <h2>Random Games</h2>
+        <div id="myCarousel" class="carousel slide">
+          <!-- Carousel items -->
+          <div class="carousel-inner">
+            <div class="item" ng-class="{active: $first}" ng-repeat="game in games.all|enabledOnSpiralGalaxy|limitTo:3">
+              <div class="feature large" style="background-image: url('{{game.promoImage}}');">
+                <div class="banner">
+                  <div class="title">
+                    <a href="/play/{{game.uuid}}">{{game.name}}</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Carousel nav -->
+          <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+          <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+        </div>
+      </div>
+
+      <div class="span4" ng-show="loggedIn && (!(games.friends|enabledOnSpiralGalaxy|empty))">
+        <h2>Featured Friends Play</h2>
+        <div id="myCarousel2" class="carousel slide">
+          <!-- Carousel items -->
+          <div class="carousel-inner">
+            <div class="item" ng-class="{active: $first}" ng-repeat="game in games.friends|enabledOnSpiralGalaxy|limitTo:3">
+              <div class="feature large" style="background-image: url('{{game.promoImage}}');">
+                <div class="banner">
+                  <div class="title">
+                    <a href="/play/{{game.uuid}}">{{game.name}}</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Carousel nav -->
+          <a class="carousel-control left" href="#myCarousel2" data-slide="prev">&lsaquo;</a>
+          <a class="carousel-control right" href="#myCarousel2" data-slide="next">&rsaquo;</a>
+        </div>
+      </div>
+
+      <div class="span4" ng-show="loggedIn && ((!(games.recently|enabledOnSpiralGalaxy|empty))|or:(games.friends|enabledOnSpiralGalaxy|empty))">
+        <h2>Play it again</h2>
+
+        <div class="row">
+          <div class="span4 notPlayedYet" ng-show="games.recently|enabledOnSpiralGalaxy|empty">
+            <p>You have not played any games yet.</p>
+          </div>
+          <div class="span2" ng-repeat="game in games.recently|enabledOnSpiralGalaxy|limitTo:4" ng-hide="games.recently|enabledOnSpiralGalaxy|empty">
+
+            <div class="feature" style="background-image: url('{{game.promoImage}}');">
               <div class="banner">
                 <div class="title">
                   <a href="/play/{{game.uuid}}">{{game.name}}</a>
@@ -27,53 +80,9 @@
             </div>
           </div>
         </div>
-        <!-- Carousel nav -->
-        <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-        <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
       </div>
+
     </div>
-
-    <div class="span4" ng-controller="GamesController" ng-show="loggedIn && (!(games.friends|enabledOnSpiralGalaxy|empty))">
-      <h2>Featured Friends Play</h2>
-      <div id="myCarousel2" class="carousel slide">
-        <!-- Carousel items -->
-        <div class="carousel-inner">
-          <div class="item" ng-class="{active: $first}" ng-repeat="game in games.friends|enabledOnSpiralGalaxy|limitTo:3">
-            <div class="feature large" style="background-image: url('{{game.promoImage}}');">
-              <div class="banner">
-                <div class="title">
-                  <a href="/play/{{game.uuid}}">{{game.name}}</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Carousel nav -->
-        <a class="carousel-control left" href="#myCarousel2" data-slide="prev">&lsaquo;</a>
-        <a class="carousel-control right" href="#myCarousel2" data-slide="next">&rsaquo;</a>
-      </div>
-    </div>
-
-    <div class="span4" ng-show="loggedIn && ((!(games.recently|enabledOnSpiralGalaxy|empty))|or:(games.friends|enabledOnSpiralGalaxy|empty))" ng-controller="GamesController">
-      <h2>Play it again</h2>
-
-      <div class="row">
-        <div class="span4 notPlayedYet" ng-show="games.recently|enabledOnSpiralGalaxy|empty">
-          <p>You have not played any games yet.</p>
-        </div>
-        <div class="span2" ng-repeat="game in games.recently|enabledOnSpiralGalaxy|limitTo:4" ng-hide="games.recently|enabledOnSpiralGalaxy|empty">
-
-          <div class="feature" style="background-image: url('{{game.promoImage}}');">
-            <div class="banner">
-              <div class="title">
-                <a href="/play/{{game.uuid}}">{{game.name}}</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
   </div>
 </div>
 
@@ -113,6 +122,9 @@
     <div class="box" >
       <div class="tab-content">
         <ul class="gamesList" >
+          <li class="loading" ng-hide="games">
+            <img src="../images/spinner.gif" /> Loading Games ...
+          </li>
           <li ng-repeat="game in games[type]|filter:gameFilter()|enabledOnSpiralGalaxy">
             <div class="media" style="background-image: url('{{game.promoImage}}');"></div>
 

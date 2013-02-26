@@ -1,4 +1,4 @@
-# 0.0.27 WIP
+# 0.0.27
 
 * surepssing jumping of layout during loading using ng-cloak
 * showing loading message while games are loaded

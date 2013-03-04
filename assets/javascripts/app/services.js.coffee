@@ -23,7 +23,7 @@ services.factory "games", ["$rootScope", "$cookies", "qs_commons_user", "qs_comm
           temporaryCategories = {}
 
           for game in data.games
-            if game.venues.indexOf('spiral-galaxy')
+            if game.venues.indexOf('spiral-galaxy') isnt -1
               temporaryCategories[game.category] ||= 0
               temporaryCategories[game.category]++
 

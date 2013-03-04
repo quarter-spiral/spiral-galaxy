@@ -1,3 +1,7 @@
+# 0.0.29 WIP
+
+* Really fixes the category counting
+
 # 0.0.28
 
 * Fixes the category counting

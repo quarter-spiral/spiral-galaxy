@@ -1,3 +1,7 @@
+# 0.0.28 WIP
+
+* Fixes the category counting
+
 # 0.0.27
 
 * surepssing jumping of layout during loading using ng-cloak

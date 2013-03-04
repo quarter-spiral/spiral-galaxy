@@ -23,11 +23,12 @@ services.factory "games", ["$rootScope", "$cookies", "qs_commons_user", "qs_comm
           temporaryCategories = {}
 
           for game in data.games
-            temporaryCategories[game.category] ||= 0
-            temporaryCategories[game.category]++
+            if game.venues.indexOf('spiral-galaxy')
+              temporaryCategories[game.category] ||= 0
+              temporaryCategories[game.category]++
 
-            game.promoImage = (game.screenshots[0] || {}).url
-            games.push game
+              game.promoImage = (game.screenshots[0] || {}).url
+              games.push game
 
           categories.splice(0, categories.length)
           for category, count of temporaryCategories

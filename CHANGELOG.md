@@ -1,3 +1,7 @@
+# 0.0.30 WIP
+
+* Updates dependencies
+
 # 0.0.29
 
 * Really fixes the category counting

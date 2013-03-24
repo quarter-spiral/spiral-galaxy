@@ -22,7 +22,7 @@ PATH
     spiral-galaxy (0.0.29)
       angular-commons-middleware (>= 0.0.4)
       auth-client (>= 0.0.14)
-      devcenter-client (>= 0.0.3)
+      devcenter-client (>= 0.0.4)
       less
       newrelic_rpm
       omniauth-oauth2
@@ -33,7 +33,7 @@ PATH
       thin
 
 GEM
-  remote: http://rubygems.org/
+  remote: https://rubygems.org/
   remote: https://user:We267RFF7BfwVt4LdqFA@privategems.herokuapp.com/
   specs:
     actionpack (3.2.9)
@@ -64,10 +64,10 @@ GEM
       json
       therubyracer
     arel (3.0.2)
-    auth-backend (0.0.27)
+    auth-backend (0.0.29)
       activerecord (>= 3.2.9)
       bcrypt-ruby
-      graph-client
+      graph-client (~> 0.0.12)
       json (~> 1.7.7)
       kaminari
       newrelic_rpm
@@ -81,15 +81,14 @@ GEM
       sinatra-flash
       thin
       uuid
-    auth-client (0.0.14)
-      service-client (>= 0.0.8)
+    auth-client (0.0.15)
+      service-client (>= 0.0.12)
     backports (2.6.7)
     bcrypt-ruby (3.0.1)
     brochure (0.5.4)
       hike (~> 1.0)
       rack (~> 1.0)
       tilt (~> 1.1)
-    bson (1.6.4)
     builder (3.0.4)
     cache-backend-iron-cache (0.0.4)
       iron_cache (= 1.4.0)
@@ -110,38 +109,38 @@ GEM
     coffee-script (2.2.0)
       coffee-script-source
       execjs
-    coffee-script-source (1.5.0)
-    commander (4.1.2)
+    coffee-script-source (1.6.1)
+    commander (4.1.3)
       highline (~> 1.6.11)
     commonjs (0.2.6)
     daemons (1.1.9)
-    datastore-backend (0.0.15)
-      auth-client (>= 0.0.6)
-      grape (= 0.2.3.qs)
+    datastore-backend (0.0.18)
+      auth-client (>= 0.0.14)
+      grape (~> 0.4.0)
       grape_newrelic (~> 0.0.3)
       json (~> 1.7.7)
-      mongoid (= 2.4.11)
+      mongoid (~> 3.1.2)
       ping-middleware (~> 0.0.2)
       rack-jsonp-middleware (= 0.0.5)
       uuid
-    datastore-client (0.0.10)
+    datastore-client (0.0.11)
       commander
       json
-      service-client (>= 0.0.7)
+      service-client (>= 0.0.12)
     descendants_tracker (0.0.1)
-    devcenter-backend (0.0.43)
-      auth-client (>= 0.0.14)
+    devcenter-backend (0.0.45)
+      auth-client (>= 0.0.15)
       cache-backend-iron-cache (~> 0.0.4)
       cache-client (~> 0.0.4)
-      datastore-client (>= 0.0.10)
-      grape (= 0.2.3.qs)
+      datastore-client (>= 0.0.11)
+      grape (~> 0.4.0)
       grape_newrelic (~> 0.0.4)
-      graph-client (>= 0.0.9)
+      graph-client (>= 0.0.12)
       json (~> 1.7.7)
       ping-middleware (~> 0.0.2)
       rack (~> 1.4.5)
-    devcenter-client (0.0.3)
-      service-client (>= 0.0.9)
+    devcenter-client (0.0.4)
+      service-client (>= 0.0.12)
     erubis (2.7.0)
     eventmachine (1.0.0)
     execjs (1.4.0)
@@ -151,54 +150,53 @@ GEM
     faye-websocket (0.4.6)
       eventmachine (>= 0.12.0)
     ffi (1.2.0)
-    grape (0.2.3.qs)
+    grape (0.4.0)
       activesupport
-      hashie (~> 1.2)
+      builder
+      hashie (>= 1.2.0)
       multi_json (>= 1.3.2)
-      multi_xml
-      rack
+      multi_xml (>= 0.5.2)
+      rack (>= 1.3.0)
       rack-accept
       rack-mount
       virtus
     grape_newrelic (0.0.4)
       grape (>= 0.2.2)
       newrelic_rpm (>= 3.5.4.33)
-    graph-backend (0.0.22)
+    graph-backend (0.0.25)
       auth-client (>= 0.0.14)
-      grape (= 0.2.3.qs)
-      grape_newrelic (~> 0.0.3)
+      grape (~> 0.4.0)
+      grape_newrelic (~> 0.0.4)
       json (~> 1.7.7)
-      neography (= 1.0.6)
+      neography (= 1.0.9)
       ping-middleware (~> 0.0.2)
-    graph-client (0.0.10)
+    graph-client (0.0.12)
       commander
-      service-client (>= 0.0.9)
+      service-client (>= 0.0.12)
     hashie (1.2.0)
-    highline (1.6.15)
+    highline (1.6.16)
     hike (1.2.1)
     http_parser.rb (0.5.3)
     http_router (0.10.2)
       rack (>= 1.0.0)
       url_mount (~> 0.2.1)
-    httparty (0.10.2)
-      multi_json (~> 1.0)
-      multi_xml (>= 0.5.2)
     httpauth (0.2.0)
+    httpclient (2.3.3)
     i18n (0.6.1)
     iron_cache (1.4.0)
       iron_core (>= 0.5.1)
-    iron_core (0.5.1)
+    iron_core (0.5.2)
       rest (>= 2.2.0)
     journey (1.0.4)
     json (1.7.7)
-    jwt (0.1.5)
+    jwt (0.1.6)
       multi_json (>= 1.0)
     kaminari (0.14.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
     launchy (2.1.1)
       addressable (~> 2.3)
-    less (2.2.2)
+    less (2.3.1)
       commonjs (~> 0.2.6)
     libv8 (3.11.8.13)
     libwebsocket (0.1.7.1)
@@ -208,24 +206,24 @@ GEM
       systemu (~> 2.5.0)
     mime-types (1.19)
     minitest (4.3.2)
-    mongo (1.6.2)
-      bson (~> 1.6.2)
-    mongoid (2.4.11)
-      activemodel (~> 3.1)
-      mongo (<= 1.6.2)
+    mongoid (3.1.2)
+      activemodel (~> 3.2)
+      moped (~> 1.4.2)
+      origin (~> 1.0)
       tzinfo (~> 0.3.22)
+    moped (1.4.4)
     multi_json (1.3.7)
     multi_xml (0.5.3)
-    multipart-post (1.1.5)
-    neography (1.0.6)
-      httparty (>= 0.8.1)
+    multipart-post (1.2.0)
+    neography (1.0.9)
+      httpclient (>= 2.3.3)
       json (>= 1.6.0)
       multi_json (>= 1.3.2)
       os (>= 0.9.6)
       rake (>= 0.8.7)
       rubyzip (>= 0.9.7)
     net-http-persistent (2.8)
-    newrelic_rpm (3.5.7.59)
+    newrelic_rpm (3.6.0.78)
     nokogiri (1.5.5)
     oauth2 (0.8.1)
       faraday (~> 0.8)
@@ -241,6 +239,7 @@ GEM
     omniauth-oauth2 (1.1.1)
       oauth2 (~> 0.8.0)
       omniauth (~> 1.0)
+    origin (1.0.11)
     os (0.9.6)
     padrino-core (0.10.7)
       activesupport (~> 3.2.0)
@@ -286,7 +285,7 @@ GEM
       libwebsocket (~> 0.1.3)
       multi_json (~> 1.0)
       rubyzip
-    service-client (0.0.9)
+    service-client (0.0.12)
       faraday (= 0.8.1)
       json
     sinatra (1.3.3)
@@ -298,17 +297,17 @@ GEM
       sinatra (~> 1.0)
     sinatra-flash (0.3.0)
       sinatra (>= 1.0.0)
-    sprockets (2.2.1)
+    sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
     sqlite3 (1.3.6)
     systemu (2.5.2)
-    therubyracer (0.11.3)
+    therubyracer (0.11.4)
       libv8 (~> 3.11.8.12)
       ref
-    thin (1.5.0)
+    thin (1.5.1)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
       rack (>= 1.0.0)
@@ -332,12 +331,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  auth-backend (>= 0.0.27)
+  auth-backend (>= 0.0.28)
   capybara
   capybara_minitest_spec
-  datastore-backend (>= 0.0.15)
-  devcenter-backend (>= 0.0.43)
-  graph-backend (>= 0.0.22)
+  datastore-backend (>= 0.0.18)
+  datastore-client (~> 0.0.11)
+  devcenter-backend (>= 0.0.45)
+  graph-backend (>= 0.0.25)
+  graph-client (~> 0.0.12)
   json
   launchy
   nokogiri

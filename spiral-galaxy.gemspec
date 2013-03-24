@@ -23,7 +23,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency 'angular-commons-middleware', '>= 0.0.4'
   gem.add_dependency 'thin'
 
-  gem.add_dependency 'devcenter-client', '>= 0.0.3'
+  gem.add_dependency 'devcenter-client', '>= 0.0.4'
   gem.add_dependency 'auth-client', '>= 0.0.14'
   gem.add_dependency 'newrelic_rpm'
   gem.add_dependency 'ping-middleware', '~> 0.0.2'

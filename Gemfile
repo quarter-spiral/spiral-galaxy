@@ -1,4 +1,4 @@
-source :rubygems
+source 'https://rubygems.org'
 source "https://user:We267RFF7BfwVt4LdqFA@privategems.herokuapp.com/"
 
 gemspec
@@ -6,10 +6,19 @@ gemspec
 gem 'json'
 
 group :development, :test do
-  gem 'auth-backend', '>= 0.0.27'
-  gem 'devcenter-backend', '>= 0.0.43'
-  gem 'datastore-backend', '>= 0.0.15'
-  gem 'graph-backend', '>= 0.0.22'
+  gem 'auth-backend', '>= 0.0.28'
+  #gem 'auth-backend', path: '../auth-backend'
+  gem 'devcenter-backend', '>= 0.0.45'
+  #gem 'devcenter-backend', path: '../devcenter-backend'
+  gem 'datastore-backend', '>= 0.0.18'
+  #gem 'datastore-backend', path: '../datastore-backend'
+  gem 'graph-backend', '>= 0.0.25'
+  #gem 'graph-backend', path: '../graph-backend'
+  gem 'datastore-client', '~> 0.0.11'
+  #gem 'datastore-client', path: '../datastore-client'
+  gem 'graph-client', '~> 0.0.12'
+  #gem 'graph-client', path: '../graph-client'
+
 
   gem 'nokogiri'
   gem 'sqlite3'

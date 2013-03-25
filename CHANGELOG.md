@@ -1,4 +1,4 @@
-# 0.0.31 WIP
+# 0.0.31
 
 * Updates to fixed angular-commons-middleware version
 

@@ -13,6 +13,7 @@ module Spiral
           asset_parts = asset.split('.')
           extension = asset_parts.pop
           asset_name = asset_parts.join('.')
+
           "#{asset_name}-#{@environment.find_asset(asset).digest}.#{extension}"
         end
       end
@@ -21,7 +22,7 @@ module Spiral
 
       def initialize
         super
-        append_path 'assets'
+        append_path File.expand_path('../../../assets', __FILE__)
         append_path File.join(Angular::Commons::Middleware.root, 'templates')
 
         reference_to_self = self

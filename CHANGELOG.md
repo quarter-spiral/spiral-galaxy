@@ -1,3 +1,7 @@
+# 0.0.31 WIP
+
+* Updates to fixed angular-commons-middleware version
+
 # 0.0.30
 
 * Updates dependencies

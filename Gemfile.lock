@@ -20,7 +20,7 @@ PATH
   remote: .
   specs:
     spiral-galaxy (0.0.30)
-      angular-commons-middleware (>= 0.0.4)
+      angular-commons-middleware (>= 0.0.5)
       auth-client (>= 0.0.14)
       devcenter-client (>= 0.0.4)
       less
@@ -58,7 +58,7 @@ GEM
       i18n (~> 0.6)
       multi_json (~> 1.0)
     addressable (2.3.2)
-    angular-commons-middleware (0.0.4)
+    angular-commons-middleware (0.0.5)
       brochure
       coffee-script
       json
@@ -109,7 +109,7 @@ GEM
     coffee-script (2.2.0)
       coffee-script-source
       execjs
-    coffee-script-source (1.6.1)
+    coffee-script-source (1.6.2)
     commander (4.1.3)
       highline (~> 1.6.11)
     commonjs (0.2.6)

@@ -20,7 +20,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency 'less'
   gem.add_dependency 'omniauth-oauth2'
 
-  gem.add_dependency 'angular-commons-middleware', '>= 0.0.4'
+  gem.add_dependency 'angular-commons-middleware', '>= 0.0.5'
   gem.add_dependency 'thin'
 
   gem.add_dependency 'devcenter-client', '>= 0.0.4'

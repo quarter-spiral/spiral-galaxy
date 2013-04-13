@@ -1,4 +1,4 @@
-# 0.0.32 / Unreleased
+# 0.0.32 / 2013-04-13
 
 * Adds session secret configuration
 * Adds SSL enforcer on app level

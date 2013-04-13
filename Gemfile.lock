@@ -19,7 +19,7 @@ GIT
 PATH
   remote: .
   specs:
-    spiral-galaxy (0.0.31)
+    spiral-galaxy (0.0.32)
       angular-commons-middleware (>= 0.0.5)
       auth-client (>= 0.0.14)
       devcenter-client (>= 0.0.4)
@@ -29,7 +29,7 @@ PATH
       ping-middleware (~> 0.0.2)
       rack (~> 1.4.5)
       rack-cache (~> 1.2)
-      rack-ssl-enforcer
+      rack-ssl-enforcer (~> 0.2.5)
       sprockets (~> 2.0)
       thin
 

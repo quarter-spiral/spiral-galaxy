@@ -29,6 +29,7 @@ PATH
       ping-middleware (~> 0.0.2)
       rack (~> 1.4.5)
       rack-cache (~> 1.2)
+      rack-ssl-enforcer
       sprockets (~> 2.0)
       thin
 
@@ -198,7 +199,7 @@ GEM
       addressable (~> 2.3)
     less (2.3.1)
       commonjs (~> 0.2.6)
-    libv8 (3.11.8.13)
+    libv8 (3.11.8.17)
     libwebsocket (0.1.7.1)
       addressable
       websocket
@@ -270,10 +271,11 @@ GEM
       rack (>= 1.0.0)
     rack-protection (1.2.0)
       rack
+    rack-ssl-enforcer (0.2.5)
     rack-test (0.6.2)
       rack (>= 1.0)
     rake (10.0.2)
-    ref (1.0.2)
+    ref (1.0.4)
     rest (2.2.0)
       net-http-persistent
       rest-client (>= 0.3.0)

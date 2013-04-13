@@ -30,4 +30,5 @@ Gem::Specification.new do |gem|
   gem.add_dependency 'sprockets', '~> 2.0'
   gem.add_dependency 'rack', '~> 1.4.5'
   gem.add_dependency 'rack-cache', '~> 1.2'
+  gem.add_dependency 'rack-ssl-enforcer', '~> 0.2.5'
 end

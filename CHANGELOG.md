@@ -1,3 +1,8 @@
+# 0.0.32 / Unreleased
+
+* Adds session secret configuration
+* Adds SSL enforcer on app level
+
 # 0.0.31
 
 * Updates to fixed angular-commons-middleware version

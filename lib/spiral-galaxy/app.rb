@@ -2,6 +2,7 @@ ENV_KEYS_TO_EXPOSE = ['QS_DEVCENTER_BACKEND_URL', 'QS_PLAYERCENTER_BACKEND_URL',
 
 require 'sprockets'
 require 'rack/cache'
+require 'rack/ssl-enforcer'
 
 module Spiral::Galaxy
   class App
@@ -9,8 +10,10 @@ module Spiral::Galaxy
       auth_callback = auth_callback_handler
 
       @app = Rack::Builder.new do
+        use Rack::SslEnforcer if ENV['RACK_ENV'] == 'production'
+
         # QS Auth
-        use Rack::Session::Cookie, key: 'qs_spiral_galaxy'
+        use Rack::Session::Cookie, secret: ENV['QS_COOKIE_SECRET'] || 'some-secret', key: 'qs_spiral_galaxy', :expire_after => 2592000
         use OmniAuth::Builder do
           provider AuthBackend, ENV['QS_OAUTH_CLIENT_ID'], ENV['QS_OAUTH_CLIENT_SECRET']
         end
